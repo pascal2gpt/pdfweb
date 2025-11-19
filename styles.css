@@ -1018,3 +1018,35 @@ button:focus-visible {
         opacity: 1;
     }
 }
+
+/* ===================================
+   Social Icon Links
+   =================================== */
+
+.social-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 243, 255, 0.1);
+    border: 2px solid rgba(0, 243, 255, 0.3);
+    border-radius: 50%;
+    color: var(--neon-cyan);
+    transition: all 0.3s ease;
+}
+
+.social-icon-link:hover {
+    background: rgba(0, 243, 255, 0.2);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+    transform: translateY(-3px) scale(1.1);
+}
+
+.social-icon-link svg {
+    transition: all 0.3s ease;
+}
+
+.social-icon-link:hover svg {
+    filter: drop-shadow(0 0 8px var(--neon-cyan));
+}
