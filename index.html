@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pascal Dominik Freyer - Liberal Arts & Sciences student combining business economics, public policy, and AI to build practical solutions.">
+    <meta name="description" content="Pascal Dominik Freyer - Digital Consciousness: AI, Policy & Innovation">
     <meta name="keywords" content="Pascal Freyer, AI, Public Policy, Entrepreneurship, Liberal Arts, Maastricht University, UCSD">
     <meta name="author" content="Pascal Dominik Freyer">
-    <title>Pascal Freyer - AI, Policy & Innovation</title>
+    <title>Pascal Freyer // Digital Consciousness</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Cyberpunk Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Custom Styles -->
+    <!-- Custom Artistic Styles -->
     <link rel="stylesheet" href="styles.css">
 
     <script>
@@ -24,900 +24,903 @@
             theme: {
                 extend: {
                     fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
                         sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                        },
-                        accent: {
-                            50: '#f0fdfa',
-                            100: '#ccfbf1',
-                            200: '#99f6e4',
-                            300: '#5eead4',
-                            400: '#2dd4bf',
-                            500: '#14b8a6',
-                            600: '#0d9488',
-                            700: '#0f766e',
-                            800: '#115e59',
-                            900: '#134e4a',
-                        }
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="font-sans antialiased bg-white text-gray-900">
+<body class="font-sans antialiased bg-black text-white overflow-x-hidden">
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="#home" class="text-xl font-bold text-gray-900">Pascal Freyer</a>
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"></canvas>
 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-gray-700 hover:text-primary-600 transition-colors">Home</a>
-                    <a href="#about" class="nav-link text-gray-700 hover:text-primary-600 transition-colors">About</a>
-                    <a href="#experience" class="nav-link text-gray-700 hover:text-primary-600 transition-colors">Experience</a>
-                    <a href="#projects" class="nav-link text-gray-700 hover:text-primary-600 transition-colors">Projects</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary-600 transition-colors">Contact</a>
+    <!-- Animated Grid Background -->
+    <div class="cyber-grid fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- Scanline Effect -->
+    <div class="scanline fixed inset-0 pointer-events-none z-50"></div>
+
+    <!-- Navigation - Glassmorphic -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="glass-nav mx-4 mt-4 rounded-2xl border border-cyan-500/30">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <a href="#home" class="flex items-center space-x-2">
+                        <div class="cyber-logo">
+                            <span class="font-orbitron text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400">
+                                PASCAL.EXE
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex space-x-1">
+                        <a href="#home" class="nav-link-cyber px-4 py-2 rounded-lg font-mono text-sm">
+                            <span class="glitch" data-text="HOME">HOME</span>
+                        </a>
+                        <a href="#about" class="nav-link-cyber px-4 py-2 rounded-lg font-mono text-sm">
+                            <span class="glitch" data-text="ABOUT">ABOUT</span>
+                        </a>
+                        <a href="#experience" class="nav-link-cyber px-4 py-2 rounded-lg font-mono text-sm">
+                            <span class="glitch" data-text="EXPERIENCE">EXPERIENCE</span>
+                        </a>
+                        <a href="#projects" class="nav-link-cyber px-4 py-2 rounded-lg font-mono text-sm">
+                            <span class="glitch" data-text="PROJECTS">PROJECTS</span>
+                        </a>
+                        <a href="#contact" class="nav-link-cyber px-4 py-2 rounded-lg font-mono text-sm">
+                            <span class="glitch" data-text="CONTACT">CONTACT</span>
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg neon-border-cyan">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <div class="px-4 py-4 space-y-3">
-                <a href="#home" class="block text-gray-700 hover:text-primary-600">Home</a>
-                <a href="#about" class="block text-gray-700 hover:text-primary-600">About</a>
-                <a href="#experience" class="block text-gray-700 hover:text-primary-600">Experience</a>
-                <a href="#projects" class="block text-gray-700 hover:text-primary-600">Projects</a>
-                <a href="#contact" class="block text-gray-700 hover:text-primary-600">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden mx-4 mt-2">
+            <div class="glass-card rounded-2xl p-4 space-y-2 border border-cyan-500/30">
+                <a href="#home" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm">HOME</a>
+                <a href="#about" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm">ABOUT</a>
+                <a href="#experience" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm">EXPERIENCE</a>
+                <a href="#projects" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm">PROJECTS</a>
+                <a href="#contact" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm">CONTACT</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-accent-50">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-        </div>
+    <!-- Hero Section - Cyberpunk -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- 3D Floating Elements -->
+        <div class="floating-cube cube-1"></div>
+        <div class="floating-cube cube-2"></div>
+        <div class="floating-cube cube-3"></div>
 
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
-            <div class="fade-in-up">
-                <div class="inline-block mb-4 px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
-                    🎓 Currently @ UC San Diego
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center z-10">
+            <div class="hero-content">
+                <!-- Status Badge -->
+                <div class="inline-block mb-6">
+                    <div class="glass-card px-6 py-2 rounded-full border border-cyan-500/50 cyber-pulse">
+                        <div class="flex items-center space-x-2">
+                            <span class="status-dot"></span>
+                            <span class="font-mono text-sm text-cyan-300">SYSTEM.ACTIVE // UCSD</span>
+                        </div>
+                    </div>
                 </div>
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-gray-900">
-                    Pascal Dominik <span class="text-gradient">Freyer</span>
+
+                <!-- Main Title with Glitch Effect -->
+                <h1 class="mb-8">
+                    <div class="font-orbitron text-6xl sm:text-7xl lg:text-8xl font-black mb-4">
+                        <span class="glitch-title block" data-text="PASCAL">PASCAL</span>
+                        <span class="glitch-title block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500" data-text="FREYER">FREYER</span>
+                    </div>
                 </h1>
-                <p class="text-xl sm:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-                    Combining <span class="font-semibold text-primary-600">Business Economics</span>,
-                    <span class="font-semibold text-accent-600">Public Policy</span>, and
-                    <span class="font-semibold text-primary-600">Artificial Intelligence</span>
-                    to build practical solutions for education, finance, and the public sector.
-                </p>
 
+                <!-- Subtitle with Typewriter Effect -->
+                <div class="mb-12">
+                    <p class="font-mono text-lg sm:text-xl text-cyan-300 mb-4">
+                        <span class="typing-text" id="typing-text"></span>
+                        <span class="cursor-blink">_</span>
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mt-8">
+                        <div class="glass-card p-4 rounded-xl border border-purple-500/30 data-card">
+                            <div class="text-3xl font-orbitron font-bold text-purple-400">AI</div>
+                            <div class="font-mono text-xs text-gray-400 mt-1">AUTOMATION</div>
+                            <div class="data-viz-bar mt-2"></div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl border border-cyan-500/30 data-card">
+                            <div class="text-3xl font-orbitron font-bold text-cyan-400">POLICY</div>
+                            <div class="font-mono text-xs text-gray-400 mt-1">GOVERNANCE</div>
+                            <div class="data-viz-bar mt-2"></div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl border border-pink-500/30 data-card">
+                            <div class="text-3xl font-orbitron font-bold text-pink-400">INNOVATION</div>
+                            <div class="font-mono text-xs text-gray-400 mt-1">ENTREPRENEURSHIP</div>
+                            <div class="data-viz-bar mt-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
                 <div class="flex flex-wrap justify-center gap-4 mb-12">
-                    <span class="px-4 py-2 bg-white rounded-full shadow-md text-sm font-medium">🤖 AI & Automation</span>
-                    <span class="px-4 py-2 bg-white rounded-full shadow-md text-sm font-medium">🏛️ Policy & Governance</span>
-                    <span class="px-4 py-2 bg-white rounded-full shadow-md text-sm font-medium">🚀 Entrepreneurship</span>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#projects" class="btn-primary">
-                        View Projects
+                    <a href="#projects" class="cyber-button-primary group">
+                        <span class="relative z-10 font-mono font-bold">EXPLORE_PROJECTS</span>
+                        <div class="cyber-button-glow"></div>
                     </a>
-                    <a href="#contact" class="btn-secondary">
-                        Get in Touch
+                    <a href="#contact" class="cyber-button-secondary group">
+                        <span class="relative z-10 font-mono font-bold">INIT_CONTACT</span>
                     </a>
                 </div>
-            </div>
 
-            <!-- Scroll Indicator -->
-            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">About Me</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="fade-in-up">
-                    <div class="bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl p-1">
-                        <div class="bg-white rounded-xl p-8">
-                            <h3 class="text-2xl font-bold mb-6 text-gray-900">Quick Facts</h3>
-                            <div class="space-y-4">
-                                <div class="flex items-start">
-                                    <span class="text-2xl mr-3">🇩🇪</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Nationality</p>
-                                        <p class="text-gray-600">German</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <span class="text-2xl mr-3">🎓</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Education</p>
-                                        <p class="text-gray-600">B.A. Liberal Arts & Sciences<br>University College Maastricht (2023–2026)</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <span class="text-2xl mr-3">📍</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Current Location</p>
-                                        <p class="text-gray-600">San Diego, California (Exchange Semester)</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <span class="text-2xl mr-3">🗣️</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Languages</p>
-                                        <p class="text-gray-600">German (Native), English (Fluent), French (DELF B2–C1)</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <span class="text-2xl mr-3">🏃</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Interests</p>
-                                        <p class="text-gray-600">Long-distance running, Debating, Fair trade & sustainability</p>
-                                    </div>
-                                </div>
-                            </div>
+                <!-- Scroll Indicator -->
+                <div class="animate-float">
+                    <div class="inline-block">
+                        <div class="text-xs font-mono text-cyan-400 mb-2">SCROLL_DOWN</div>
+                        <div class="w-6 h-10 mx-auto border-2 border-cyan-400 rounded-full p-1">
+                            <div class="w-1 h-2 bg-cyan-400 rounded-full mx-auto animate-scroll-dot"></div>
                         </div>
                     </div>
                 </div>
-
-                <div class="fade-in-up">
-                    <h3 class="text-3xl font-bold mb-6 text-gray-900">My Journey</h3>
-                    <div class="space-y-4 text-gray-600 leading-relaxed">
-                        <p>
-                            I'm a German Liberal Arts & Sciences student at University College Maastricht with a passion for bridging
-                            <strong class="text-gray-900">artificial intelligence</strong>,
-                            <strong class="text-gray-900">business economics</strong>, and
-                            <strong class="text-gray-900">public policy</strong>.
-                        </p>
-                        <p>
-                            Currently on exchange at <strong class="text-gray-900">UC San Diego</strong>, I'm diving deep into AI,
-                            large language models, cognition, and decision-making while engaging with the vibrant startup ecosystem
-                            in California.
-                        </p>
-                        <p>
-                            My path began in Obersulm, Germany, where I served as Head Boy and founded a
-                            <strong class="text-gray-900">fair-trade school uniform company</strong>. I won awards in youth research
-                            for developing biodegradable shoes from wood-based foam—4× softer than alternatives.
-                        </p>
-                        <p>
-                            From the <strong class="text-gray-900">European Parliament</strong> to
-                            <strong class="text-gray-900">Helaba</strong> (one of Germany's largest banks), I've worked on
-                            policy research, AI-driven workflow automation, and innovation management. I'm building AI platforms
-                            like <strong class="text-gray-900">EduGenius</strong> for teachers and
-                            <strong class="text-gray-900">Onboarding Buddy</strong> for banking onboarding.
-                        </p>
-                        <p>
-                            I believe in <strong class="text-gray-900">evidence-based thinking</strong>,
-                            <strong class="text-gray-900">responsible AI</strong>, and creating technology that serves society.
-                            Whether it's through entrepreneurship, policy work, or research, I aim to make a tangible impact.
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">Experience</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
+    <!-- About Section - Data Visualization Style -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal-element">
+                <div class="inline-block mb-4">
+                    <span class="font-mono text-sm text-cyan-400">&lt;section id="about"&gt;</span>
+                </div>
+                <h2 class="font-orbitron text-4xl sm:text-5xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+                        SYSTEM.PROFILE
+                    </span>
+                </h2>
+                <div class="cyber-divider mx-auto"></div>
             </div>
 
-            <div class="relative">
-                <!-- Timeline line -->
-                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary-500 to-accent-500"></div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Left: Quick Stats -->
+                <div class="reveal-element space-y-6">
+                    <div class="glass-card-dark p-8 rounded-2xl border border-cyan-500/30 holographic-card">
+                        <h3 class="font-orbitron text-2xl font-bold mb-6 text-cyan-400">CORE.ATTRIBUTES</h3>
 
-                <!-- Experience Cards -->
-                <div class="space-y-12">
-
-                    <!-- Helaba -->
-                    <div class="experience-card md:grid md:grid-cols-2 md:gap-8 items-center fade-in-up">
-                        <div class="md:text-right">
-                            <div class="inline-block mb-2 px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
-                                2024–Present
+                        <div class="space-y-6">
+                            <div class="stat-item">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-mono text-sm text-gray-400">NATIONALITY</span>
+                                    <span class="text-cyan-400 font-mono">🇩🇪 DEU</span>
+                                </div>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 100%"></div></div>
                             </div>
-                            <h3 class="text-2xl font-bold mb-2 text-gray-900">AI & Automation Specialist</h3>
-                            <p class="text-lg text-primary-600 font-semibold mb-3">Helaba (Landesbank Hessen-Thüringen)</p>
-                            <p class="text-gray-600 mb-4">
-                                Led AI-driven workflow automation in securities issuing services, designing n8n workflows and
-                                LLM-based verification systems. Created JSON schemas for structured data exchange and developed
-                                management-level KPI concepts for AI governance in banking.
+
+                            <div class="stat-item">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-mono text-sm text-gray-400">LOCATION</span>
+                                    <span class="text-purple-400 font-mono">SAN_DIEGO</span>
+                                </div>
+                                <div class="stat-bar"><div class="stat-fill stat-fill-purple" style="width: 85%"></div></div>
+                            </div>
+
+                            <div class="stat-item">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-mono text-sm text-gray-400">EDUCATION.LEVEL</span>
+                                    <span class="text-pink-400 font-mono">B.A_IN_PROGRESS</span>
+                                </div>
+                                <div class="stat-bar"><div class="stat-fill stat-fill-pink" style="width: 70%"></div></div>
+                            </div>
+
+                            <div class="stat-item">
+                                <div class="mb-3">
+                                    <span class="font-mono text-sm text-gray-400 block mb-2">LANGUAGES.ARRAY</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div class="lang-chip">DE</div>
+                                    <div class="lang-chip">EN</div>
+                                    <div class="lang-chip">FR</div>
+                                </div>
+                            </div>
+
+                            <div class="stat-item">
+                                <div class="mb-3">
+                                    <span class="font-mono text-sm text-gray-400 block mb-2">INTERESTS.TAGS</span>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="interest-tag">RUNNING</span>
+                                    <span class="interest-tag">DEBATE</span>
+                                    <span class="interest-tag">SUSTAINABILITY</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Animated Corner Accents -->
+                        <div class="corner-accent top-left"></div>
+                        <div class="corner-accent top-right"></div>
+                        <div class="corner-accent bottom-left"></div>
+                        <div class="corner-accent bottom-right"></div>
+                    </div>
+                </div>
+
+                <!-- Right: Biography -->
+                <div class="reveal-element space-y-6">
+                    <div class="glass-card-dark p-8 rounded-2xl border border-purple-500/30 holographic-card">
+                        <h3 class="font-orbitron text-2xl font-bold mb-6 text-purple-400">NARRATIVE.STREAM</h3>
+
+                        <div class="space-y-4 text-gray-300 leading-relaxed terminal-text">
+                            <p class="fade-in-text">
+                                <span class="text-cyan-400 font-mono">&gt;</span> German Liberal Arts & Sciences student at
+                                <span class="highlight-text">University College Maastricht</span>, synthesizing
+                                <span class="highlight-text">AI</span>,
+                                <span class="highlight-text">business economics</span>, and
+                                <span class="highlight-text">public policy</span>.
                             </p>
-                            <div class="flex flex-wrap gap-2 md:justify-end">
-                                <span class="skill-tag">AI Automation</span>
-                                <span class="skill-tag">LLMs</span>
-                                <span class="skill-tag">n8n Workflows</span>
-                                <span class="skill-tag">Banking Operations</span>
-                                <span class="skill-tag">AI Governance</span>
+
+                            <p class="fade-in-text">
+                                <span class="text-purple-400 font-mono">&gt;</span> Currently interfacing with
+                                <span class="highlight-text">UC San Diego</span>'s innovation ecosystem,
+                                studying AI, cognition, and decision-making systems.
+                            </p>
+
+                            <p class="fade-in-text">
+                                <span class="text-pink-400 font-mono">&gt;</span> Journey initialized in Obersulm, Germany.
+                                Former Head Boy. Founded <span class="highlight-text">fair-trade uniform company</span>.
+                                Won awards for <span class="highlight-text">biodegradable shoe research</span>
+                                (4× softer materials).
+                            </p>
+
+                            <p class="fade-in-text">
+                                <span class="text-cyan-400 font-mono">&gt;</span> Field experience:
+                                <span class="highlight-text">European Parliament</span> policy research →
+                                <span class="highlight-text">Helaba</span> AI automation →
+                                Building <span class="highlight-text">EduGenius</span> &
+                                <span class="highlight-text">Onboarding Buddy</span>.
+                            </p>
+
+                            <p class="fade-in-text">
+                                <span class="text-purple-400 font-mono">&gt;</span> Core values:
+                                <span class="text-cyan-400">evidence_based_thinking()</span>,
+                                <span class="text-purple-400">responsible_AI()</span>,
+                                <span class="text-pink-400">tangible_impact()</span>
+                            </p>
+                        </div>
+
+                        <div class="corner-accent top-left"></div>
+                        <div class="corner-accent top-right"></div>
+                        <div class="corner-accent bottom-left"></div>
+                        <div class="corner-accent bottom-right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section - Timeline Visualization -->
+    <section id="experience" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal-element">
+                <div class="inline-block mb-4">
+                    <span class="font-mono text-sm text-purple-400">&lt;section id="experience"&gt;</span>
+                </div>
+                <h2 class="font-orbitron text-4xl sm:text-5xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+                        EXPERIENCE.LOG
+                    </span>
+                </h2>
+                <div class="cyber-divider mx-auto"></div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative">
+                <!-- Vertical Line -->
+                <div class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 neon-line-vertical"></div>
+
+                <div class="space-y-12">
+                    <!-- Helaba -->
+                    <div class="reveal-element lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                        <div class="lg:text-right mb-6 lg:mb-0">
+                            <div class="glass-card-dark p-6 rounded-xl border border-cyan-500/30 holographic-card experience-card hover-lift">
+                                <div class="inline-block mb-3 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/50">
+                                    <span class="font-mono text-xs text-cyan-300">2024–PRESENT</span>
+                                </div>
+                                <h3 class="font-orbitron text-xl font-bold mb-2 text-cyan-400">AI & AUTOMATION_SPECIALIST</h3>
+                                <p class="text-purple-400 font-mono text-sm mb-3">Helaba // Banking_Systems</p>
+                                <p class="text-gray-400 text-sm mb-4">
+                                    Architected AI-driven workflow automation in securities services. Designed n8n workflows,
+                                    LLM verification systems, JSON schemas. Developed KPI frameworks for AI governance in banking.
+                                </p>
+                                <div class="flex flex-wrap gap-2 lg:justify-end">
+                                    <span class="tech-chip-cyan">AI_AUTOMATION</span>
+                                    <span class="tech-chip-cyan">LLMs</span>
+                                    <span class="tech-chip-cyan">n8n</span>
+                                    <span class="tech-chip-cyan">BANKING_OPS</span>
+                                </div>
+                                <div class="corner-accent-sm top-left"></div>
+                                <div class="corner-accent-sm bottom-right"></div>
                             </div>
                         </div>
-                        <div class="hidden md:flex justify-center">
-                            <div class="timeline-dot"></div>
+                        <div class="hidden lg:flex justify-center">
+                            <div class="timeline-node"></div>
                         </div>
                     </div>
 
                     <!-- Canon -->
-                    <div class="experience-card md:grid md:grid-cols-2 md:gap-8 items-center fade-in-up">
-                        <div class="hidden md:flex justify-center order-2">
-                            <div class="timeline-dot"></div>
+                    <div class="reveal-element lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                        <div class="hidden lg:flex justify-center order-2">
+                            <div class="timeline-node"></div>
                         </div>
-                        <div class="order-1">
-                            <div class="inline-block mb-2 px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold">
-                                2024
-                            </div>
-                            <h3 class="text-2xl font-bold mb-2 text-gray-900">Student Consultant</h3>
-                            <p class="text-lg text-accent-600 font-semibold mb-3">Canon - Community Case Challenge</p>
-                            <p class="text-gray-600 mb-4">
-                                Developed a startup incubator management system achieving ~4× higher innovation output.
-                                Collaborated with BCG consultants to bridge corporate innovation with entrepreneurial processes.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag">Innovation Management</span>
-                                <span class="skill-tag">Incubator Design</span>
-                                <span class="skill-tag">Consulting</span>
-                                <span class="skill-tag">Process Optimization</span>
+                        <div class="order-1 mb-6 lg:mb-0">
+                            <div class="glass-card-dark p-6 rounded-xl border border-purple-500/30 holographic-card experience-card hover-lift">
+                                <div class="inline-block mb-3 px-3 py-1 rounded-full bg-purple-500/20 border border-purple-500/50">
+                                    <span class="font-mono text-xs text-purple-300">2024</span>
+                                </div>
+                                <h3 class="font-orbitron text-xl font-bold mb-2 text-purple-400">STUDENT_CONSULTANT</h3>
+                                <p class="text-pink-400 font-mono text-sm mb-3">Canon // Innovation_Lab</p>
+                                <p class="text-gray-400 text-sm mb-4">
+                                    Engineered startup incubator management system achieving 4× innovation output.
+                                    Collaborated with BCG consultants to bridge corporate innovation with entrepreneurial processes.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-chip-purple">INNOVATION_MGMT</span>
+                                    <span class="tech-chip-purple">INCUBATOR</span>
+                                    <span class="tech-chip-purple">CONSULTING</span>
+                                </div>
+                                <div class="corner-accent-sm top-left"></div>
+                                <div class="corner-accent-sm bottom-right"></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- European Parliament -->
-                    <div class="experience-card md:grid md:grid-cols-2 md:gap-8 items-center fade-in-up">
-                        <div class="md:text-right">
-                            <div class="inline-block mb-2 px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
-                                2021
-                            </div>
-                            <h3 class="text-2xl font-bold mb-2 text-gray-900">Public Policy Intern</h3>
-                            <p class="text-lg text-primary-600 font-semibold mb-3">European Parliament</p>
-                            <p class="text-gray-600 mb-4">
-                                Conducted policy research and prepared briefing notes. Participated in plenary debates,
-                                committee meetings, and drafted responses to citizen inquiries, gaining deep insight into
-                                EU-level policymaking.
-                            </p>
-                            <div class="flex flex-wrap gap-2 md:justify-end">
-                                <span class="skill-tag">Policy Research</span>
-                                <span class="skill-tag">EU Parliament</span>
-                                <span class="skill-tag">Legislative Process</span>
-                                <span class="skill-tag">Stakeholder Communication</span>
+                    <div class="reveal-element lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                        <div class="lg:text-right mb-6 lg:mb-0">
+                            <div class="glass-card-dark p-6 rounded-xl border border-pink-500/30 holographic-card experience-card hover-lift">
+                                <div class="inline-block mb-3 px-3 py-1 rounded-full bg-pink-500/20 border border-pink-500/50">
+                                    <span class="font-mono text-xs text-pink-300">2021</span>
+                                </div>
+                                <h3 class="font-orbitron text-xl font-bold mb-2 text-pink-400">PUBLIC_POLICY.INTERN</h3>
+                                <p class="text-cyan-400 font-mono text-sm mb-3">European_Parliament // EU_Systems</p>
+                                <p class="text-gray-400 text-sm mb-4">
+                                    Conducted policy research, prepared briefing notes. Participated in plenary debates,
+                                    committee meetings. Drafted citizen responses. Deep dive into EU-level policymaking.
+                                </p>
+                                <div class="flex flex-wrap gap-2 lg:justify-end">
+                                    <span class="tech-chip-pink">POLICY_RESEARCH</span>
+                                    <span class="tech-chip-pink">EU_PARLIAMENT</span>
+                                    <span class="tech-chip-pink">LEGISLATIVE</span>
+                                </div>
+                                <div class="corner-accent-sm top-left"></div>
+                                <div class="corner-accent-sm bottom-right"></div>
                             </div>
                         </div>
-                        <div class="hidden md:flex justify-center">
-                            <div class="timeline-dot"></div>
+                        <div class="hidden lg:flex justify-center">
+                            <div class="timeline-node"></div>
                         </div>
                     </div>
 
                     <!-- Social Media -->
-                    <div class="experience-card md:grid md:grid-cols-2 md:gap-8 items-center fade-in-up">
-                        <div class="hidden md:flex justify-center order-2">
-                            <div class="timeline-dot"></div>
+                    <div class="reveal-element lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                        <div class="hidden lg:flex justify-center order-2">
+                            <div class="timeline-node"></div>
                         </div>
-                        <div class="order-1">
-                            <div class="inline-block mb-2 px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold">
-                                2021–Present
-                            </div>
-                            <h3 class="text-2xl font-bold mb-2 text-gray-900">Social Media Manager & Founder</h3>
-                            <p class="text-lg text-accent-600 font-semibold mb-3">Social Media Management Startup</p>
-                            <p class="text-gray-600 mb-4">
-                                Founded a social media management startup focused on organic growth strategies.
-                                Increased client reach by ~450% within three months. Managed political communication
-                                for FDP youth organization.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-tag">Digital Strategy</span>
-                                <span class="skill-tag">Organic Growth</span>
-                                <span class="skill-tag">Political Communication</span>
-                                <span class="skill-tag">Content Creation</span>
+                        <div class="order-1 mb-6 lg:mb-0">
+                            <div class="glass-card-dark p-6 rounded-xl border border-cyan-500/30 holographic-card experience-card hover-lift">
+                                <div class="inline-block mb-3 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/50">
+                                    <span class="font-mono text-xs text-cyan-300">2021–PRESENT</span>
+                                </div>
+                                <h3 class="font-orbitron text-xl font-bold mb-2 text-cyan-400">SOCIAL_MEDIA.FOUNDER</h3>
+                                <p class="text-purple-400 font-mono text-sm mb-3">Digital_Growth // Startup</p>
+                                <p class="text-gray-400 text-sm mb-4">
+                                    Founded organic growth startup. Increased client reach 450% in 3 months.
+                                    Managed political communication for FDP youth organization.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-chip-cyan">DIGITAL_STRATEGY</span>
+                                    <span class="tech-chip-cyan">ORGANIC_GROWTH</span>
+                                    <span class="tech-chip-cyan">POLCOMMS</span>
+                                </div>
+                                <div class="corner-accent-sm top-left"></div>
+                                <div class="corner-accent-sm bottom-right"></div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Student Leadership -->
-                    <div class="experience-card md:grid md:grid-cols-2 md:gap-8 items-center fade-in-up">
-                        <div class="md:text-right">
-                            <div class="inline-block mb-2 px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
-                                2023–Present
-                            </div>
-                            <h3 class="text-2xl font-bold mb-2 text-gray-900">Social Chair & Debating Club Member</h3>
-                            <p class="text-lg text-primary-600 font-semibold mb-3">UCMSA Universalis & Eloquentia</p>
-                            <p class="text-gray-600 mb-4">
-                                Organize monthly social events and community-building activities as Social Chair.
-                                Active member of Eloquentia Debating Club's events coordination team.
-                            </p>
-                            <div class="flex flex-wrap gap-2 md:justify-end">
-                                <span class="skill-tag">Event Organization</span>
-                                <span class="skill-tag">Community Building</span>
-                                <span class="skill-tag">Public Speaking</span>
-                                <span class="skill-tag">Leadership</span>
-                            </div>
-                        </div>
-                        <div class="hidden md:flex justify-center">
-                            <div class="timeline-dot"></div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">Projects</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
-                <p class="mt-4 text-xl text-gray-600">Building AI-driven solutions for real-world challenges</p>
+    <!-- Projects Section - 3D Card Grid -->
+    <section id="projects" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal-element">
+                <div class="inline-block mb-4">
+                    <span class="font-mono text-sm text-pink-400">&lt;section id="projects"&gt;</span>
+                </div>
+                <h2 class="font-orbitron text-4xl sm:text-5xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-cyan-500">
+                        PROJECTS.ARRAY
+                    </span>
+                </h2>
+                <div class="cyber-divider mx-auto"></div>
+                <p class="mt-4 font-mono text-cyan-400">Building AI-driven solutions for real-world challenges</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
                 <!-- EduGenius -->
-                <div class="project-card group fade-in-up">
-                    <div class="mb-4">
-                        <div class="text-4xl mb-3">📚</div>
-                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-primary-600 transition-colors">
-                            EduGenius / "Genny"
-                        </h3>
-                        <p class="text-sm text-primary-600 font-semibold mb-3">AI Education Platform</p>
-                    </div>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        AI platform automating lesson planning and teacher workflows for the German school system.
-                        Generates curriculum-aligned lesson plans, worksheets, and differentiated materials using RAG
-                        architecture on Google Vertex AI.
-                    </p>
-                    <div class="mb-4">
-                        <p class="text-sm font-semibold text-gray-700 mb-2">Tech Stack:</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">RAG</span>
-                            <span class="tech-tag">Google Vertex AI</span>
-                            <span class="tech-tag">LLMs</span>
-                            <span class="tech-tag">B2B/B2G</span>
+                <div class="reveal-element project-card-3d group">
+                    <div class="glass-card-dark p-6 rounded-2xl border border-purple-500/30 h-full holographic-card hover-lift">
+                        <div class="mb-4">
+                            <div class="text-4xl mb-3">📚</div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-orbitron text-xl font-bold text-purple-400">EDUGENIUS</h3>
+                                <span class="status-badge-active">ACTIVE</span>
+                            </div>
+                            <p class="font-mono text-xs text-gray-500 mb-3">AI_EDUCATION // v2.1.0</p>
                         </div>
-                    </div>
-                    <div class="pt-4 border-t border-gray-200">
-                        <p class="text-sm text-gray-500">
-                            <strong class="text-gray-700">Impact:</strong> Reducing teacher workload and automating administrative tasks
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            AI platform automating lesson planning for German schools. Generates curriculum-aligned
+                            materials using RAG on Google Vertex AI. Targeting B2B/B2G markets.
                         </p>
+                        <div class="mb-4">
+                            <p class="font-mono text-xs text-gray-500 mb-2">TECH.STACK:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-chip-sm">RAG</span>
+                                <span class="tech-chip-sm">VERTEX_AI</span>
+                                <span class="tech-chip-sm">LLMs</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-700">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono text-xs text-gray-500">IMPACT:</span>
+                                <span class="font-mono text-xs text-cyan-400">TEACHER_WORKLOAD ↓</span>
+                            </div>
+                        </div>
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
                     </div>
                 </div>
 
                 <!-- Onboarding Buddy -->
-                <div class="project-card group fade-in-up">
-                    <div class="mb-4">
-                        <div class="text-4xl mb-3">🤝</div>
-                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-accent-600 transition-colors">
-                            Onboarding Buddy
-                        </h3>
-                        <p class="text-sm text-accent-600 font-semibold mb-3">AI Banking Assistant</p>
-                    </div>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        AI-powered onboarding assistant for Helaba helping new bank employees navigate processes,
-                        tools, and documentation. Automates FAQs and reduces senior staff time spent on repetitive questions.
-                    </p>
-                    <div class="mb-4">
-                        <p class="text-sm font-semibold text-gray-700 mb-2">Tech Stack:</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">LLMs</span>
-                            <span class="tech-tag">Knowledge Base Integration</span>
-                            <span class="tech-tag">Workflow Automation</span>
+                <div class="reveal-element project-card-3d group">
+                    <div class="glass-card-dark p-6 rounded-2xl border border-cyan-500/30 h-full holographic-card hover-lift">
+                        <div class="mb-4">
+                            <div class="text-4xl mb-3">🤝</div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-orbitron text-xl font-bold text-cyan-400">ONBOARD.BUDDY</h3>
+                                <span class="status-badge-active">ACTIVE</span>
+                            </div>
+                            <p class="font-mono text-xs text-gray-500 mb-3">BANKING_AI // v1.3.2</p>
                         </div>
-                    </div>
-                    <div class="pt-4 border-t border-gray-200">
-                        <p class="text-sm text-gray-500">
-                            <strong class="text-gray-700">Impact:</strong> Streamlining onboarding and improving employee experience
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            AI assistant for Helaba employee onboarding. Automates FAQs, reduces senior staff time.
+                            Integrates with knowledge bases and workflows.
                         </p>
+                        <div class="mb-4">
+                            <p class="font-mono text-xs text-gray-500 mb-2">TECH.STACK:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-chip-sm">LLMs</span>
+                                <span class="tech-chip-sm">KNOWLEDGE_BASE</span>
+                                <span class="tech-chip-sm">AUTOMATION</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-700">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono text-xs text-gray-500">IMPACT:</span>
+                                <span class="font-mono text-xs text-purple-400">ONBOARDING_TIME ↓</span>
+                            </div>
+                        </div>
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
                     </div>
                 </div>
 
                 <!-- OneTicket -->
-                <div class="project-card group fade-in-up">
-                    <div class="mb-4">
-                        <div class="text-4xl mb-3">🎟️</div>
-                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-primary-600 transition-colors">
-                            OneTicket
-                        </h3>
-                        <p class="text-sm text-primary-600 font-semibold mb-3">Student Event Platform</p>
-                    </div>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Ticketing platform for student and campus events at UCSD and Maastricht. Simplifies event
-                        discovery, ticketing, and entry while integrating loyalty features and analytics for organizers.
-                    </p>
-                    <div class="mb-4">
-                        <p class="text-sm font-semibold text-gray-700 mb-2">Tech Stack:</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Web Platform</span>
-                            <span class="tech-tag">Payment Integration</span>
-                            <span class="tech-tag">Analytics</span>
+                <div class="reveal-element project-card-3d group">
+                    <div class="glass-card-dark p-6 rounded-2xl border border-pink-500/30 h-full holographic-card hover-lift">
+                        <div class="mb-4">
+                            <div class="text-4xl mb-3">🎟️</div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-orbitron text-xl font-bold text-pink-400">ONETICKET</h3>
+                                <span class="status-badge-dev">DEV</span>
+                            </div>
+                            <p class="font-mono text-xs text-gray-500 mb-3">EVENTS_PLATFORM // v0.8.1</p>
                         </div>
-                    </div>
-                    <div class="pt-4 border-t border-gray-200">
-                        <p class="text-sm text-gray-500">
-                            <strong class="text-gray-700">Impact:</strong> Connecting students with campus events seamlessly
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Student event platform for UCSD and Maastricht. Simplifies discovery, ticketing, entry.
+                            Loyalty features and analytics for organizers.
                         </p>
+                        <div class="mb-4">
+                            <p class="font-mono text-xs text-gray-500 mb-2">TECH.STACK:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-chip-sm">WEB_PLATFORM</span>
+                                <span class="tech-chip-sm">PAYMENTS</span>
+                                <span class="tech-chip-sm">ANALYTICS</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-700">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono text-xs text-gray-500">IMPACT:</span>
+                                <span class="font-mono text-xs text-cyan-400">EVENT_ACCESS ↑</span>
+                            </div>
+                        </div>
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
                     </div>
                 </div>
 
                 <!-- Thinking Machines -->
-                <div class="project-card group fade-in-up">
-                    <div class="mb-4">
-                        <div class="text-4xl mb-3">🧠</div>
-                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-accent-600 transition-colors">
-                            Thinking Machines / "Tinker"
-                        </h3>
-                        <p class="text-sm text-accent-600 font-semibold mb-3">AI Research Project</p>
-                    </div>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Research project from UCSD's "Thinking Machines" course exploring machine behavior and
-                        AI system interactions. Investigates how AI systems behave and interact in various contexts.
-                    </p>
-                    <div class="mb-4">
-                        <p class="text-sm font-semibold text-gray-700 mb-2">Focus Areas:</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Machine Behavior</span>
-                            <span class="tech-tag">AI Interaction</span>
-                            <span class="tech-tag">Research</span>
+                <div class="reveal-element project-card-3d group">
+                    <div class="glass-card-dark p-6 rounded-2xl border border-cyan-500/30 h-full holographic-card hover-lift">
+                        <div class="mb-4">
+                            <div class="text-4xl mb-3">🧠</div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-orbitron text-xl font-bold text-cyan-400">TINKER.AI</h3>
+                                <span class="status-badge-research">RESEARCH</span>
+                            </div>
+                            <p class="font-mono text-xs text-gray-500 mb-3">MACHINE_BEHAVIOR // v1.0</p>
                         </div>
-                    </div>
-                    <div class="pt-4 border-t border-gray-200">
-                        <p class="text-sm text-gray-500">
-                            <strong class="text-gray-700">Context:</strong> UCSD AI & Cognition coursework
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            UCSD research project exploring machine behavior and AI system interactions.
+                            Investigates how AI systems behave in various contexts.
                         </p>
+                        <div class="mb-4">
+                            <p class="font-mono text-xs text-gray-500 mb-2">FOCUS.AREAS:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-chip-sm">MACHINE_BEHAVIOR</span>
+                                <span class="tech-chip-sm">AI_INTERACTION</span>
+                                <span class="tech-chip-sm">RESEARCH</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-700">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono text-xs text-gray-500">CONTEXT:</span>
+                                <span class="font-mono text-xs text-purple-400">UCSD_COURSEWORK</span>
+                            </div>
+                        </div>
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
                     </div>
                 </div>
 
                 <!-- Biodegradable Shoes -->
-                <div class="project-card group fade-in-up">
-                    <div class="mb-4">
-                        <div class="text-4xl mb-3">👟</div>
-                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-primary-600 transition-colors">
-                            Biodegradable Shoes
-                        </h3>
-                        <p class="text-sm text-primary-600 font-semibold mb-3">Sustainability Research</p>
-                    </div>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Award-winning research project (Jugend forscht) developing biodegradable shoes from wood-based foam.
-                        Material achieved ~4× greater softness than alternatives while maintaining recyclability.
-                    </p>
-                    <div class="mb-4">
-                        <p class="text-sm font-semibold text-gray-700 mb-2">Focus:</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Sustainable Materials</span>
-                            <span class="tech-tag">Product Design</span>
-                            <span class="tech-tag">Research</span>
+                <div class="reveal-element project-card-3d group">
+                    <div class="glass-card-dark p-6 rounded-2xl border border-purple-500/30 h-full holographic-card hover-lift">
+                        <div class="mb-4">
+                            <div class="text-4xl mb-3">👟</div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-orbitron text-xl font-bold text-purple-400">BIO.SHOES</h3>
+                                <span class="status-badge-award">AWARD</span>
+                            </div>
+                            <p class="font-mono text-xs text-gray-500 mb-3">SUSTAINABILITY // Jugend_forscht</p>
                         </div>
-                    </div>
-                    <div class="pt-4 border-t border-gray-200">
-                        <p class="text-sm text-gray-500">
-                            <strong class="text-gray-700">Recognition:</strong> Winner, Jugend forscht competition (2021–2022)
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Award-winning research: biodegradable shoes from wood-based foam.
+                            4× greater softness than alternatives while maintaining recyclability.
                         </p>
+                        <div class="mb-4">
+                            <p class="font-mono text-xs text-gray-500 mb-2">FOCUS.AREAS:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-chip-sm">SUSTAINABLE_MAT</span>
+                                <span class="tech-chip-sm">PRODUCT_DESIGN</span>
+                                <span class="tech-chip-sm">RESEARCH</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-700">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono text-xs text-gray-500">RECOGNITION:</span>
+                                <span class="font-mono text-xs text-pink-400">🏆 WINNER</span>
+                            </div>
+                        </div>
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
                     </div>
                 </div>
 
                 <!-- Fair-Trade Uniforms -->
-                <div class="project-card group fade-in-up">
-                    <div class="mb-4">
-                        <div class="text-4xl mb-3">👕</div>
-                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-accent-600 transition-colors">
-                            Fair-Trade School Uniforms
-                        </h3>
-                        <p class="text-sm text-accent-600 font-semibold mb-3">Social Enterprise</p>
-                    </div>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Founded a fair-trade school uniform company providing affordable and ethically sourced clothing.
-                        Combined social impact, supply chain awareness, and student entrepreneurship at Paul Distelbarth Gymnasium.
-                    </p>
-                    <div class="mb-4">
-                        <p class="text-sm font-semibold text-gray-700 mb-2">Focus:</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Fair Trade</span>
-                            <span class="tech-tag">Social Impact</span>
-                            <span class="tech-tag">Entrepreneurship</span>
+                <div class="reveal-element project-card-3d group">
+                    <div class="glass-card-dark p-6 rounded-2xl border border-pink-500/30 h-full holographic-card hover-lift">
+                        <div class="mb-4">
+                            <div class="text-4xl mb-3">👕</div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-orbitron text-xl font-bold text-pink-400">FAIR.TRADE</h3>
+                                <span class="status-badge-completed">COMPLETED</span>
+                            </div>
+                            <p class="font-mono text-xs text-gray-500 mb-3">SOCIAL_ENTERPRISE // School</p>
                         </div>
-                    </div>
-                    <div class="pt-4 border-t border-gray-200">
-                        <p class="text-sm text-gray-500">
-                            <strong class="text-gray-700">Impact:</strong> Providing ethical clothing options for students
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Founded fair-trade school uniform company. Provided affordable, ethically sourced clothing.
+                            Combined social impact with entrepreneurship.
                         </p>
+                        <div class="mb-4">
+                            <p class="font-mono text-xs text-gray-500 mb-2">FOCUS.AREAS:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-chip-sm">FAIR_TRADE</span>
+                                <span class="tech-chip-sm">SOCIAL_IMPACT</span>
+                                <span class="tech-chip-sm">ENTREPRENEURSHIP</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-700">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono text-xs text-gray-500">IMPACT:</span>
+                                <span class="font-mono text-xs text-cyan-400">ETHICAL_SUPPLY ↑</span>
+                            </div>
+                        </div>
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">Skills & Expertise</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
+    <!-- Skills Section - Radar Chart Style -->
+    <section id="skills" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal-element">
+                <div class="inline-block mb-4">
+                    <span class="font-mono text-sm text-cyan-400">&lt;section id="skills"&gt;</span>
+                </div>
+                <h2 class="font-orbitron text-4xl sm:text-5xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500">
+                        SKILLS.MATRIX
+                    </span>
+                </h2>
+                <div class="cyber-divider mx-auto"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Technical/AI -->
-                <div class="skill-category fade-in-up">
-                    <div class="text-4xl mb-4">🤖</div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900">Technical & AI</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Python (NLP, ML)
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Large Language Models
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            RAG Architectures
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Google Vertex AI
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            n8n Workflow Automation
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            JSON & API Design
-                        </li>
-                    </ul>
+                <div class="reveal-element skill-card-cyber">
+                    <div class="glass-card-dark p-6 rounded-2xl border border-cyan-500/30 h-full holographic-card">
+                        <div class="text-4xl mb-4">🤖</div>
+                        <h3 class="font-orbitron text-lg font-bold mb-4 text-cyan-400">TECHNICAL.AI</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-cyan-400 mr-2">▹</span> Python (NLP, ML)
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-cyan-400 mr-2">▹</span> Large Language Models
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-cyan-400 mr-2">▹</span> RAG Architectures
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-cyan-400 mr-2">▹</span> Google Vertex AI
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-cyan-400 mr-2">▹</span> n8n Workflows
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-cyan-400 mr-2">▹</span> JSON & APIs
+                            </li>
+                        </ul>
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
+                    </div>
                 </div>
 
                 <!-- Business & Strategy -->
-                <div class="skill-category fade-in-up animation-delay-200">
-                    <div class="text-4xl mb-4">💼</div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900">Business & Strategy</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Business Economics
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Innovation Management
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            TAM/SAM/SOM Analysis
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            KPI Development
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Startup Strategy
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Pitch Decks & One-Pagers
-                        </li>
-                    </ul>
+                <div class="reveal-element skill-card-cyber">
+                    <div class="glass-card-dark p-6 rounded-2xl border border-purple-500/30 h-full holographic-card">
+                        <div class="text-4xl mb-4">💼</div>
+                        <h3 class="font-orbitron text-lg font-bold mb-4 text-purple-400">BUSINESS.STRATEGY</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-purple-400 mr-2">▹</span> Business Economics
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-purple-400 mr-2">▹</span> Innovation Management
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-purple-400 mr-2">▹</span> TAM/SAM/SOM Analysis
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-purple-400 mr-2">▹</span> KPI Development
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-purple-400 mr-2">▹</span> Startup Strategy
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-purple-400 mr-2">▹</span> Pitch Decks
+                            </li>
+                        </ul>
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
+                    </div>
                 </div>
 
                 <!-- Policy & Governance -->
-                <div class="skill-category fade-in-up animation-delay-400">
-                    <div class="text-4xl mb-4">🏛️</div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900">Policy & Governance</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Public Policy Analysis
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            EU Parliamentary Process
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            AI Governance
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Risk & Regulation
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Policy Research
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Stakeholder Engagement
-                        </li>
-                    </ul>
+                <div class="reveal-element skill-card-cyber">
+                    <div class="glass-card-dark p-6 rounded-2xl border border-pink-500/30 h-full holographic-card">
+                        <div class="text-4xl mb-4">🏛️</div>
+                        <h3 class="font-orbitron text-lg font-bold mb-4 text-pink-400">POLICY.GOV</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-pink-400 mr-2">▹</span> Public Policy Analysis
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-pink-400 mr-2">▹</span> EU Parliamentary Process
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-pink-400 mr-2">▹</span> AI Governance
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-pink-400 mr-2">▹</span> Risk & Regulation
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-pink-400 mr-2">▹</span> Policy Research
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-pink-400 mr-2">▹</span> Stakeholder Engagement
+                            </li>
+                        </ul>
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
+                    </div>
                 </div>
 
                 <!-- Communication & Leadership -->
-                <div class="skill-category fade-in-up animation-delay-600">
-                    <div class="text-4xl mb-4">🎤</div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900">Communication & Leadership</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Trilingual (DE/EN/FR)
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Public Speaking
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Debating
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Social Media Strategy
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Event Organization
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Team Leadership
-                        </li>
-                    </ul>
+                <div class="reveal-element skill-card-cyber">
+                    <div class="glass-card-dark p-6 rounded-2xl border border-cyan-500/30 h-full holographic-card">
+                        <div class="text-4xl mb-4">🎤</div>
+                        <h3 class="font-orbitron text-lg font-bold mb-4 text-cyan-400">COMMUNICATION.LEAD</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-cyan-400 mr-2">▹</span> Trilingual (DE/EN/FR)
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-cyan-400 mr-2">▹</span> Public Speaking
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-cyan-400 mr-2">▹</span> Debating
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-cyan-400 mr-2">▹</span> Social Media Strategy
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-cyan-400 mr-2">▹</span> Event Organization
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="text-cyan-400 mr-2">▹</span> Team Leadership
+                            </li>
+                        </ul>
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Awards Section -->
-    <section id="awards" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">Awards & Recognition</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-
-                <div class="award-card fade-in-up">
-                    <div class="text-5xl mb-4">🏆</div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-900">Jugend forscht Winner</h3>
-                    <p class="text-primary-600 font-semibold mb-2">2021–2022</p>
-                    <p class="text-gray-600">
-                        Winner for biodegradable shoes research project using wood-based foam materials
-                    </p>
+    <!-- Contact Section - Terminal Style -->
+    <section id="contact" class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal-element">
+                <div class="inline-block mb-4">
+                    <span class="font-mono text-sm text-purple-400">&lt;section id="contact"&gt;</span>
                 </div>
-
-                <div class="award-card fade-in-up animation-delay-200">
-                    <div class="text-5xl mb-4">🎖️</div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-900">Dean's Award</h3>
-                    <p class="text-primary-600 font-semibold mb-2">Paul Distelbarth Gymnasium</p>
-                    <p class="text-gray-600">
-                        Recognition for academic excellence and student leadership
-                    </p>
-                </div>
-
-                <div class="award-card fade-in-up animation-delay-400">
-                    <div class="text-5xl mb-4">👔</div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-900">Head Boy</h3>
-                    <p class="text-primary-600 font-semibold mb-2">Paul Distelbarth Gymnasium</p>
-                    <p class="text-gray-600">
-                        Elected student leadership role representing the student body
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gradient-to-br from-primary-50 via-white to-accent-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">Let's Connect</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
-                <p class="mt-4 text-xl text-gray-600">
-                    Interested in collaboration, opportunities, or just want to chat about AI, policy, or entrepreneurship?
+                <h2 class="font-orbitron text-4xl sm:text-5xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-500">
+                        INIT.CONTACT
+                    </span>
+                </h2>
+                <div class="cyber-divider mx-auto"></div>
+                <p class="mt-4 font-mono text-gray-400">
+                    Ready to collaborate on AI, policy, or innovation?
                 </p>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 fade-in-up">
-                <div class="grid md:grid-cols-2 gap-8 mb-8">
-                    <div>
-                        <h3 class="text-lg font-semibold mb-4 text-gray-900">Open to Opportunities</h3>
-                        <ul class="space-y-3 text-gray-600">
-                            <li class="flex items-start">
-                                <svg class="w-5 h-5 mr-2 text-primary-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                                Internships in AI, consulting, or policy
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-5 h-5 mr-2 text-primary-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                                Research collaborations
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-5 h-5 mr-2 text-primary-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                                Startup co-founder positions
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-5 h-5 mr-2 text-primary-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                                Speaking engagements
-                            </li>
-                        </ul>
+            <div class="reveal-element">
+                <div class="glass-card-dark p-8 md:p-12 rounded-2xl border border-cyan-500/30 holographic-card">
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 class="font-orbitron text-lg font-bold mb-4 text-cyan-400">OPPORTUNITIES.OPEN</h3>
+                            <ul class="space-y-3 text-sm text-gray-300">
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-2 mt-1">▹</span>
+                                    Internships in AI, consulting, policy
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2 mt-1">▹</span>
+                                    Research collaborations
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-pink-400 mr-2 mt-1">▹</span>
+                                    Startup co-founder positions
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-2 mt-1">▹</span>
+                                    Speaking engagements
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-orbitron text-lg font-bold mb-4 text-purple-400">EXPLORING.CURRENTLY</h3>
+                            <ul class="space-y-3 text-sm text-gray-300">
+                                <li class="flex items-start">
+                                    <span class="text-purple-400 mr-2 mt-1">▹</span>
+                                    Master's programs (MPP, AI & Policy)
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-2 mt-1">▹</span>
+                                    Thesis topics on AI strategy
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-pink-400 mr-2 mt-1">▹</span>
+                                    AI governance frameworks
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-cyan-400 mr-2 mt-1">▹</span>
+                                    Ed-tech innovations
+                                </li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div>
-                        <h3 class="text-lg font-semibold mb-4 text-gray-900">Currently Exploring</h3>
-                        <ul class="space-y-3 text-gray-600">
-                            <li class="flex items-start">
-                                <svg class="w-5 h-5 mr-2 text-accent-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                                Master's programs (MPP, AI & Policy)
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-5 h-5 mr-2 text-accent-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                                Thesis topics on AI strategy
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-5 h-5 mr-2 text-accent-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                                AI governance frameworks
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-5 h-5 mr-2 text-accent-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                                Ed-tech innovations
-                            </li>
-                        </ul>
+                    <div class="border-t border-gray-700 pt-8">
+                        <p class="text-center text-gray-400 mb-6 font-mono text-sm">
+                            $ CONNECT_VIA.email || CONNECT_VIA.linkedin
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4">
+                            <a href="mailto:contact@pascalfreyer.com" class="cyber-button-primary group">
+                                <span class="relative z-10 font-mono font-bold">SEND_EMAIL</span>
+                                <div class="cyber-button-glow"></div>
+                            </a>
+                            <a href="https://linkedin.com/in/pascal-freyer" target="_blank" rel="noopener noreferrer" class="cyber-button-secondary group">
+                                <span class="relative z-10 font-mono font-bold">CONNECT_LINKEDIN</span>
+                            </a>
+                        </div>
+                        <p class="text-center text-xs text-gray-600 mt-6 font-mono">
+                            // UPDATE WITH ACTUAL CONTACT INFO
+                        </p>
                     </div>
-                </div>
 
-                <div class="border-t border-gray-200 pt-8">
-                    <p class="text-center text-gray-600 mb-6">
-                        Feel free to reach out via email or connect with me on LinkedIn
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="mailto:contact@pascalfreyer.com" class="btn-primary text-center">
-                            <svg class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                            Email Me
-                        </a>
-                        <a href="https://linkedin.com/in/pascal-freyer" target="_blank" rel="noopener noreferrer" class="btn-secondary text-center">
-                            <svg class="w-5 h-5 inline-block mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                            LinkedIn
-                        </a>
-                    </div>
-                    <p class="text-center text-sm text-gray-500 mt-6">
-                        <strong>Note:</strong> Update email and LinkedIn links with your actual contact information
-                    </p>
+                    <div class="corner-accent top-left"></div>
+                    <div class="corner-accent top-right"></div>
+                    <div class="corner-accent bottom-left"></div>
+                    <div class="corner-accent bottom-right"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Footer - Terminal Style -->
+    <footer class="py-12 relative border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Pascal Freyer</h3>
-                    <p class="text-gray-400">
+                    <h3 class="font-orbitron text-lg font-bold mb-4 text-cyan-400">PASCAL.FREYER</h3>
+                    <p class="text-gray-400 text-sm font-mono">
                         Building the future at the intersection of AI, policy, and entrepreneurship.
                     </p>
                 </div>
 
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
-                        <li><a href="#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a></li>
-                        <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    <h3 class="font-orbitron text-sm font-semibold mb-4 text-purple-400">NAVIGATION.TREE</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="text-gray-400 hover:text-cyan-400 transition-colors font-mono">about()</a></li>
+                        <li><a href="#experience" class="text-gray-400 hover:text-cyan-400 transition-colors font-mono">experience()</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-cyan-400 transition-colors font-mono">projects()</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-cyan-400 transition-colors font-mono">contact()</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Education</h3>
-                    <ul class="space-y-2 text-gray-400">
+                    <h3 class="font-orbitron text-sm font-semibold mb-4 text-pink-400">EDUCATION.STATUS</h3>
+                    <ul class="space-y-2 text-sm text-gray-400 font-mono">
                         <li>🎓 University College Maastricht</li>
                         <li>🏫 UC San Diego (Exchange)</li>
                         <li>📍 Maastricht, NL & San Diego, CA</li>
@@ -925,9 +928,10 @@
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Pascal Dominik Freyer. All rights reserved.</p>
-                <p class="mt-2 text-sm">Built with passion for innovation and impact.</p>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500 font-mono text-sm">&copy; 2025 Pascal Dominik Freyer. All rights reserved.</p>
+                <p class="mt-2 text-xs text-gray-600 font-mono">// Built with cyberpunk aesthetics & glassmorphism</p>
+                <p class="mt-1 text-xs text-gray-700 font-mono">&lt;/html&gt;</p>
             </div>
         </div>
     </footer>
