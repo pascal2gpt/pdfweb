@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pascal Dominik Freyer - Liberal Arts & Sciences student combining business economics, public policy, and AI to build practical solutions.">
+    <meta name="keywords" content="Pascal Freyer, AI, Public Policy, Entrepreneurship, Liberal Arts, Maastricht University, UCSD">
+    <meta name="author" content="Pascal Dominik Freyer">
+    <title>Pascal Freyer - AI, Policy & Innovation</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        accent: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased bg-white text-gray-900">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="text-xl font-bold text-gray-900">Pascal Freyer</a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary-600 transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary-600 transition-colors">About</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-primary-600 transition-colors">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-primary-600 transition-colors">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary-600 transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="block text-gray-700 hover:text-primary-600">Home</a>
+                <a href="#about" class="block text-gray-700 hover:text-primary-600">About</a>
+                <a href="#experience" class="block text-gray-700 hover:text-primary-600">Experience</a>
+                <a href="#projects" class="block text-gray-700 hover:text-primary-600">Projects</a>
+                <a href="#contact" class="block text-gray-700 hover:text-primary-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-accent-50">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+            <div class="fade-in-up">
+                <div class="inline-block mb-4 px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
+                    🎓 Currently @ UC San Diego
+                </div>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-gray-900">
+                    Pascal Dominik <span class="text-gradient">Freyer</span>
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Combining <span class="font-semibold text-primary-600">Business Economics</span>,
+                    <span class="font-semibold text-accent-600">Public Policy</span>, and
+                    <span class="font-semibold text-primary-600">Artificial Intelligence</span>
+                    to build practical solutions for education, finance, and the public sector.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <span class="px-4 py-2 bg-white rounded-full shadow-md text-sm font-medium">🤖 AI & Automation</span>
+                    <span class="px-4 py-2 bg-white rounded-full shadow-md text-sm font-medium">🏛️ Policy & Governance</span>
+                    <span class="px-4 py-2 bg-white rounded-full shadow-md text-sm font-medium">🚀 Entrepreneurship</span>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#projects" class="btn-primary">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">About Me</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-up">
+                    <div class="bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl p-1">
+                        <div class="bg-white rounded-xl p-8">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-900">Quick Facts</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-3">🇩🇪</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Nationality</p>
+                                        <p class="text-gray-600">German</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-3">🎓</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Education</p>
+                                        <p class="text-gray-600">B.A. Liberal Arts & Sciences<br>University College Maastricht (2023–2026)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-3">📍</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Current Location</p>
+                                        <p class="text-gray-600">San Diego, California (Exchange Semester)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-3">🗣️</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Languages</p>
+                                        <p class="text-gray-600">German (Native), English (Fluent), French (DELF B2–C1)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-3">🏃</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Interests</p>
+                                        <p class="text-gray-600">Long-distance running, Debating, Fair trade & sustainability</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in-up">
+                    <h3 class="text-3xl font-bold mb-6 text-gray-900">My Journey</h3>
+                    <div class="space-y-4 text-gray-600 leading-relaxed">
+                        <p>
+                            I'm a German Liberal Arts & Sciences student at University College Maastricht with a passion for bridging
+                            <strong class="text-gray-900">artificial intelligence</strong>,
+                            <strong class="text-gray-900">business economics</strong>, and
+                            <strong class="text-gray-900">public policy</strong>.
+                        </p>
+                        <p>
+                            Currently on exchange at <strong class="text-gray-900">UC San Diego</strong>, I'm diving deep into AI,
+                            large language models, cognition, and decision-making while engaging with the vibrant startup ecosystem
+                            in California.
+                        </p>
+                        <p>
+                            My path began in Obersulm, Germany, where I served as Head Boy and founded a
+                            <strong class="text-gray-900">fair-trade school uniform company</strong>. I won awards in youth research
+                            for developing biodegradable shoes from wood-based foam—4× softer than alternatives.
+                        </p>
+                        <p>
+                            From the <strong class="text-gray-900">European Parliament</strong> to
+                            <strong class="text-gray-900">Helaba</strong> (one of Germany's largest banks), I've worked on
+                            policy research, AI-driven workflow automation, and innovation management. I'm building AI platforms
+                            like <strong class="text-gray-900">EduGenius</strong> for teachers and
+                            <strong class="text-gray-900">Onboarding Buddy</strong> for banking onboarding.
+                        </p>
+                        <p>
+                            I believe in <strong class="text-gray-900">evidence-based thinking</strong>,
+                            <strong class="text-gray-900">responsible AI</strong>, and creating technology that serves society.
+                            Whether it's through entrepreneurship, policy work, or research, I aim to make a tangible impact.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">Experience</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary-500 to-accent-500"></div>
+
+                <!-- Experience Cards -->
+                <div class="space-y-12">
+
+                    <!-- Helaba -->
+                    <div class="experience-card md:grid md:grid-cols-2 md:gap-8 items-center fade-in-up">
+                        <div class="md:text-right">
+                            <div class="inline-block mb-2 px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
+                                2024–Present
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-900">AI & Automation Specialist</h3>
+                            <p class="text-lg text-primary-600 font-semibold mb-3">Helaba (Landesbank Hessen-Thüringen)</p>
+                            <p class="text-gray-600 mb-4">
+                                Led AI-driven workflow automation in securities issuing services, designing n8n workflows and
+                                LLM-based verification systems. Created JSON schemas for structured data exchange and developed
+                                management-level KPI concepts for AI governance in banking.
+                            </p>
+                            <div class="flex flex-wrap gap-2 md:justify-end">
+                                <span class="skill-tag">AI Automation</span>
+                                <span class="skill-tag">LLMs</span>
+                                <span class="skill-tag">n8n Workflows</span>
+                                <span class="skill-tag">Banking Operations</span>
+                                <span class="skill-tag">AI Governance</span>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex justify-center">
+                            <div class="timeline-dot"></div>
+                        </div>
+                    </div>
+
+                    <!-- Canon -->
+                    <div class="experience-card md:grid md:grid-cols-2 md:gap-8 items-center fade-in-up">
+                        <div class="hidden md:flex justify-center order-2">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="order-1">
+                            <div class="inline-block mb-2 px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold">
+                                2024
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-900">Student Consultant</h3>
+                            <p class="text-lg text-accent-600 font-semibold mb-3">Canon - Community Case Challenge</p>
+                            <p class="text-gray-600 mb-4">
+                                Developed a startup incubator management system achieving ~4× higher innovation output.
+                                Collaborated with BCG consultants to bridge corporate innovation with entrepreneurial processes.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Innovation Management</span>
+                                <span class="skill-tag">Incubator Design</span>
+                                <span class="skill-tag">Consulting</span>
+                                <span class="skill-tag">Process Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- European Parliament -->
+                    <div class="experience-card md:grid md:grid-cols-2 md:gap-8 items-center fade-in-up">
+                        <div class="md:text-right">
+                            <div class="inline-block mb-2 px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
+                                2021
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-900">Public Policy Intern</h3>
+                            <p class="text-lg text-primary-600 font-semibold mb-3">European Parliament</p>
+                            <p class="text-gray-600 mb-4">
+                                Conducted policy research and prepared briefing notes. Participated in plenary debates,
+                                committee meetings, and drafted responses to citizen inquiries, gaining deep insight into
+                                EU-level policymaking.
+                            </p>
+                            <div class="flex flex-wrap gap-2 md:justify-end">
+                                <span class="skill-tag">Policy Research</span>
+                                <span class="skill-tag">EU Parliament</span>
+                                <span class="skill-tag">Legislative Process</span>
+                                <span class="skill-tag">Stakeholder Communication</span>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex justify-center">
+                            <div class="timeline-dot"></div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="experience-card md:grid md:grid-cols-2 md:gap-8 items-center fade-in-up">
+                        <div class="hidden md:flex justify-center order-2">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="order-1">
+                            <div class="inline-block mb-2 px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold">
+                                2021–Present
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-900">Social Media Manager & Founder</h3>
+                            <p class="text-lg text-accent-600 font-semibold mb-3">Social Media Management Startup</p>
+                            <p class="text-gray-600 mb-4">
+                                Founded a social media management startup focused on organic growth strategies.
+                                Increased client reach by ~450% within three months. Managed political communication
+                                for FDP youth organization.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Digital Strategy</span>
+                                <span class="skill-tag">Organic Growth</span>
+                                <span class="skill-tag">Political Communication</span>
+                                <span class="skill-tag">Content Creation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Student Leadership -->
+                    <div class="experience-card md:grid md:grid-cols-2 md:gap-8 items-center fade-in-up">
+                        <div class="md:text-right">
+                            <div class="inline-block mb-2 px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
+                                2023–Present
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-900">Social Chair & Debating Club Member</h3>
+                            <p class="text-lg text-primary-600 font-semibold mb-3">UCMSA Universalis & Eloquentia</p>
+                            <p class="text-gray-600 mb-4">
+                                Organize monthly social events and community-building activities as Social Chair.
+                                Active member of Eloquentia Debating Club's events coordination team.
+                            </p>
+                            <div class="flex flex-wrap gap-2 md:justify-end">
+                                <span class="skill-tag">Event Organization</span>
+                                <span class="skill-tag">Community Building</span>
+                                <span class="skill-tag">Public Speaking</span>
+                                <span class="skill-tag">Leadership</span>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex justify-center">
+                            <div class="timeline-dot"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">Projects</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-xl text-gray-600">Building AI-driven solutions for real-world challenges</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- EduGenius -->
+                <div class="project-card group fade-in-up">
+                    <div class="mb-4">
+                        <div class="text-4xl mb-3">📚</div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-primary-600 transition-colors">
+                            EduGenius / "Genny"
+                        </h3>
+                        <p class="text-sm text-primary-600 font-semibold mb-3">AI Education Platform</p>
+                    </div>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        AI platform automating lesson planning and teacher workflows for the German school system.
+                        Generates curriculum-aligned lesson plans, worksheets, and differentiated materials using RAG
+                        architecture on Google Vertex AI.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-gray-700 mb-2">Tech Stack:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">Google Vertex AI</span>
+                            <span class="tech-tag">LLMs</span>
+                            <span class="tech-tag">B2B/B2G</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200">
+                        <p class="text-sm text-gray-500">
+                            <strong class="text-gray-700">Impact:</strong> Reducing teacher workload and automating administrative tasks
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Onboarding Buddy -->
+                <div class="project-card group fade-in-up">
+                    <div class="mb-4">
+                        <div class="text-4xl mb-3">🤝</div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-accent-600 transition-colors">
+                            Onboarding Buddy
+                        </h3>
+                        <p class="text-sm text-accent-600 font-semibold mb-3">AI Banking Assistant</p>
+                    </div>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        AI-powered onboarding assistant for Helaba helping new bank employees navigate processes,
+                        tools, and documentation. Automates FAQs and reduces senior staff time spent on repetitive questions.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-gray-700 mb-2">Tech Stack:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">LLMs</span>
+                            <span class="tech-tag">Knowledge Base Integration</span>
+                            <span class="tech-tag">Workflow Automation</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200">
+                        <p class="text-sm text-gray-500">
+                            <strong class="text-gray-700">Impact:</strong> Streamlining onboarding and improving employee experience
+                        </p>
+                    </div>
+                </div>
+
+                <!-- OneTicket -->
+                <div class="project-card group fade-in-up">
+                    <div class="mb-4">
+                        <div class="text-4xl mb-3">🎟️</div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-primary-600 transition-colors">
+                            OneTicket
+                        </h3>
+                        <p class="text-sm text-primary-600 font-semibold mb-3">Student Event Platform</p>
+                    </div>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Ticketing platform for student and campus events at UCSD and Maastricht. Simplifies event
+                        discovery, ticketing, and entry while integrating loyalty features and analytics for organizers.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-gray-700 mb-2">Tech Stack:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Web Platform</span>
+                            <span class="tech-tag">Payment Integration</span>
+                            <span class="tech-tag">Analytics</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200">
+                        <p class="text-sm text-gray-500">
+                            <strong class="text-gray-700">Impact:</strong> Connecting students with campus events seamlessly
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Thinking Machines -->
+                <div class="project-card group fade-in-up">
+                    <div class="mb-4">
+                        <div class="text-4xl mb-3">🧠</div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-accent-600 transition-colors">
+                            Thinking Machines / "Tinker"
+                        </h3>
+                        <p class="text-sm text-accent-600 font-semibold mb-3">AI Research Project</p>
+                    </div>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Research project from UCSD's "Thinking Machines" course exploring machine behavior and
+                        AI system interactions. Investigates how AI systems behave and interact in various contexts.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-gray-700 mb-2">Focus Areas:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Machine Behavior</span>
+                            <span class="tech-tag">AI Interaction</span>
+                            <span class="tech-tag">Research</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200">
+                        <p class="text-sm text-gray-500">
+                            <strong class="text-gray-700">Context:</strong> UCSD AI & Cognition coursework
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Biodegradable Shoes -->
+                <div class="project-card group fade-in-up">
+                    <div class="mb-4">
+                        <div class="text-4xl mb-3">👟</div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-primary-600 transition-colors">
+                            Biodegradable Shoes
+                        </h3>
+                        <p class="text-sm text-primary-600 font-semibold mb-3">Sustainability Research</p>
+                    </div>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Award-winning research project (Jugend forscht) developing biodegradable shoes from wood-based foam.
+                        Material achieved ~4× greater softness than alternatives while maintaining recyclability.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-gray-700 mb-2">Focus:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Sustainable Materials</span>
+                            <span class="tech-tag">Product Design</span>
+                            <span class="tech-tag">Research</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200">
+                        <p class="text-sm text-gray-500">
+                            <strong class="text-gray-700">Recognition:</strong> Winner, Jugend forscht competition (2021–2022)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Fair-Trade Uniforms -->
+                <div class="project-card group fade-in-up">
+                    <div class="mb-4">
+                        <div class="text-4xl mb-3">👕</div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-accent-600 transition-colors">
+                            Fair-Trade School Uniforms
+                        </h3>
+                        <p class="text-sm text-accent-600 font-semibold mb-3">Social Enterprise</p>
+                    </div>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Founded a fair-trade school uniform company providing affordable and ethically sourced clothing.
+                        Combined social impact, supply chain awareness, and student entrepreneurship at Paul Distelbarth Gymnasium.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-gray-700 mb-2">Focus:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Fair Trade</span>
+                            <span class="tech-tag">Social Impact</span>
+                            <span class="tech-tag">Entrepreneurship</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200">
+                        <p class="text-sm text-gray-500">
+                            <strong class="text-gray-700">Impact:</strong> Providing ethical clothing options for students
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">Skills & Expertise</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Technical/AI -->
+                <div class="skill-category fade-in-up">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Technical & AI</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Python (NLP, ML)
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Large Language Models
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            RAG Architectures
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Google Vertex AI
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            n8n Workflow Automation
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            JSON & API Design
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Business & Strategy -->
+                <div class="skill-category fade-in-up animation-delay-200">
+                    <div class="text-4xl mb-4">💼</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Business & Strategy</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Business Economics
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Innovation Management
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            TAM/SAM/SOM Analysis
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            KPI Development
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Startup Strategy
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Pitch Decks & One-Pagers
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Policy & Governance -->
+                <div class="skill-category fade-in-up animation-delay-400">
+                    <div class="text-4xl mb-4">🏛️</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Policy & Governance</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Public Policy Analysis
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            EU Parliamentary Process
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            AI Governance
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Risk & Regulation
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Policy Research
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Stakeholder Engagement
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Communication & Leadership -->
+                <div class="skill-category fade-in-up animation-delay-600">
+                    <div class="text-4xl mb-4">🎤</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Communication & Leadership</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Trilingual (DE/EN/FR)
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Public Speaking
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Debating
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Social Media Strategy
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Event Organization
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Team Leadership
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">Awards & Recognition</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="award-card fade-in-up">
+                    <div class="text-5xl mb-4">🏆</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Jugend forscht Winner</h3>
+                    <p class="text-primary-600 font-semibold mb-2">2021–2022</p>
+                    <p class="text-gray-600">
+                        Winner for biodegradable shoes research project using wood-based foam materials
+                    </p>
+                </div>
+
+                <div class="award-card fade-in-up animation-delay-200">
+                    <div class="text-5xl mb-4">🎖️</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Dean's Award</h3>
+                    <p class="text-primary-600 font-semibold mb-2">Paul Distelbarth Gymnasium</p>
+                    <p class="text-gray-600">
+                        Recognition for academic excellence and student leadership
+                    </p>
+                </div>
+
+                <div class="award-card fade-in-up animation-delay-400">
+                    <div class="text-5xl mb-4">👔</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">Head Boy</h3>
+                    <p class="text-primary-600 font-semibold mb-2">Paul Distelbarth Gymnasium</p>
+                    <p class="text-gray-600">
+                        Elected student leadership role representing the student body
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-primary-50 via-white to-accent-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">Let's Connect</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-xl text-gray-600">
+                    Interested in collaboration, opportunities, or just want to chat about AI, policy, or entrepreneurship?
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 fade-in-up">
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-gray-900">Open to Opportunities</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-2 text-primary-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Internships in AI, consulting, or policy
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-2 text-primary-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Research collaborations
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-2 text-primary-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Startup co-founder positions
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-2 text-primary-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Speaking engagements
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-gray-900">Currently Exploring</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-2 text-accent-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Master's programs (MPP, AI & Policy)
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-2 text-accent-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Thesis topics on AI strategy
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-2 text-accent-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                AI governance frameworks
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-2 text-accent-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Ed-tech innovations
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-200 pt-8">
+                    <p class="text-center text-gray-600 mb-6">
+                        Feel free to reach out via email or connect with me on LinkedIn
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="mailto:contact@pascalfreyer.com" class="btn-primary text-center">
+                            <svg class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            Email Me
+                        </a>
+                        <a href="https://linkedin.com/in/pascal-freyer" target="_blank" rel="noopener noreferrer" class="btn-secondary text-center">
+                            <svg class="w-5 h-5 inline-block mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-6">
+                        <strong>Note:</strong> Update email and LinkedIn links with your actual contact information
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Pascal Freyer</h3>
+                    <p class="text-gray-400">
+                        Building the future at the intersection of AI, policy, and entrepreneurship.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Education</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>🎓 University College Maastricht</li>
+                        <li>🏫 UC San Diego (Exchange)</li>
+                        <li>📍 Maastricht, NL & San Diego, CA</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Pascal Dominik Freyer. All rights reserved.</p>
+                <p class="mt-2 text-sm">Built with passion for innovation and impact.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
