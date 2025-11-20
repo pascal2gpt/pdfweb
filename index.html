@@ -60,19 +60,19 @@
                     <!-- Desktop Navigation -->
                     <div class="hidden md:flex items-center space-x-1">
                         <a href="#home" class="nav-link-cyber px-4 py-2 rounded-lg font-mono text-sm">
-                            <span class="glitch" data-text="HOME">HOME</span>
+                            <span class="glitch" data-text="HOME" data-i18n="nav_home">HOME</span>
                         </a>
                         <a href="#about" class="nav-link-cyber px-4 py-2 rounded-lg font-mono text-sm">
-                            <span class="glitch" data-text="ABOUT">ABOUT</span>
+                            <span class="glitch" data-text="ABOUT" data-i18n="nav_about">ABOUT</span>
                         </a>
                         <a href="#experience" class="nav-link-cyber px-4 py-2 rounded-lg font-mono text-sm">
-                            <span class="glitch" data-text="EXPERIENCE">EXPERIENCE</span>
+                            <span class="glitch" data-text="EXPERIENCE" data-i18n="nav_experience">EXPERIENCE</span>
                         </a>
                         <a href="#projects" class="nav-link-cyber px-4 py-2 rounded-lg font-mono text-sm">
-                            <span class="glitch" data-text="PROJECTS">PROJECTS</span>
+                            <span class="glitch" data-text="PROJECTS" data-i18n="nav_projects">PROJECTS</span>
                         </a>
                         <a href="#contact" class="nav-link-cyber px-4 py-2 rounded-lg font-mono text-sm">
-                            <span class="glitch" data-text="CONTACT">CONTACT</span>
+                            <span class="glitch" data-text="CONTACT" data-i18n="nav_contact">CONTACT</span>
                         </a>
 
                         <!-- GitHub Icon -->
@@ -83,6 +83,27 @@
                                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                             </svg>
                         </a>
+
+                        <!-- Language Switcher -->
+                        <div class="ml-2 flex items-center space-x-1 border-l border-gray-700 pl-2">
+                            <button data-lang="de" class="px-3 py-1 rounded-lg font-mono text-xs nav-link-cyber hover:bg-cyan-500/10 transition-all">
+                                DE
+                            </button>
+                            <button data-lang="en" class="px-3 py-1 rounded-lg font-mono text-xs nav-link-cyber hover:bg-cyan-500/10 transition-all">
+                                EN
+                            </button>
+                        </div>
+
+                        <!-- Theme Toggle -->
+                        <button id="theme-toggle" class="ml-2 p-2 rounded-lg nav-link-cyber hover:bg-cyan-500/10 transition-all"
+                                title="Toggle theme">
+                            <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                            </svg>
+                            <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
                     </div>
 
                     <!-- Mobile Menu Button -->
@@ -98,19 +119,33 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden mx-4 mt-2">
             <div class="glass-card rounded-2xl p-4 space-y-2 border border-cyan-500/30">
-                <a href="#home" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm">HOME</a>
-                <a href="#about" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm">ABOUT</a>
-                <a href="#experience" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm">EXPERIENCE</a>
-                <a href="#projects" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm">PROJECTS</a>
-                <a href="#contact" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm">CONTACT</a>
+                <a href="#home" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm" data-i18n="nav_home">HOME</a>
+                <a href="#about" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm" data-i18n="nav_about">ABOUT</a>
+                <a href="#experience" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm" data-i18n="nav_experience">EXPERIENCE</a>
+                <a href="#projects" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm" data-i18n="nav_projects">PROJECTS</a>
+                <a href="#contact" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm" data-i18n="nav_contact">CONTACT</a>
                 <div class="border-t border-gray-700 pt-2 mt-2">
                     <a href="https://github.com/pascal2gpt" target="_blank" rel="noopener noreferrer"
                        class="flex items-center px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm">
                         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
-                        GITHUB
+                        <span data-i18n="nav_github">GITHUB</span>
                     </a>
+                    <div class="flex items-center space-x-2 px-4 py-2">
+                        <button data-lang="de" class="flex-1 px-3 py-2 rounded-lg font-mono text-xs nav-link-cyber hover:bg-cyan-500/10 transition-all text-center">
+                            DE
+                        </button>
+                        <button data-lang="en" class="flex-1 px-3 py-2 rounded-lg font-mono text-xs nav-link-cyber hover:bg-cyan-500/10 transition-all text-center">
+                            EN
+                        </button>
+                    </div>
+                    <button id="theme-toggle-mobile" class="flex items-center w-full px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                        <span id="theme-toggle-mobile-text">LIGHT MODE</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -130,7 +165,7 @@
                     <div class="glass-card px-6 py-2 rounded-full border border-cyan-500/50 cyber-pulse">
                         <div class="flex items-center space-x-2">
                             <span class="status-dot"></span>
-                            <span class="font-mono text-sm text-cyan-300">SYSTEM.ACTIVE // UCSD</span>
+                            <span class="font-mono text-sm text-cyan-300" data-i18n="hero_status">SYSTEM.ACTIVE // UCSD</span>
                         </div>
                     </div>
                 </div>
@@ -171,11 +206,19 @@
                 <!-- CTA Buttons -->
                 <div class="flex flex-wrap justify-center gap-4 mb-8">
                     <a href="#projects" class="cyber-button-primary group">
-                        <span class="relative z-10 font-mono font-bold">EXPLORE_PROJECTS</span>
+                        <span class="relative z-10 font-mono font-bold" data-i18n="hero_btn_projects">EXPLORE_PROJECTS</span>
                         <div class="cyber-button-glow"></div>
                     </a>
                     <a href="#contact" class="cyber-button-secondary group">
-                        <span class="relative z-10 font-mono font-bold">INIT_CONTACT</span>
+                        <span class="relative z-10 font-mono font-bold" data-i18n="hero_btn_contact">INIT_CONTACT</span>
+                    </a>
+                    <a href="/resume-pascal-freyer.pdf" download class="cyber-button-secondary group">
+                        <span class="relative z-10 font-mono font-bold flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            <span data-i18n="hero_btn_cv">DOWNLOAD_CV</span>
+                        </span>
                     </a>
                 </div>
 
@@ -204,7 +247,7 @@
                 <!-- Scroll Indicator -->
                 <div class="animate-float">
                     <div class="inline-block">
-                        <div class="text-xs font-mono text-cyan-400 mb-2">SCROLL_DOWN</div>
+                        <div class="text-xs font-mono text-cyan-400 mb-2" data-i18n="hero_scroll">SCROLL_DOWN</div>
                         <div class="w-6 h-10 mx-auto border-2 border-cyan-400 rounded-full p-1">
                             <div class="w-1 h-2 bg-cyan-400 rounded-full mx-auto animate-scroll-dot"></div>
                         </div>
@@ -223,7 +266,7 @@
                     <span class="font-mono text-sm text-cyan-400">&lt;section id="about"&gt;</span>
                 </div>
                 <h2 class="font-orbitron text-4xl sm:text-5xl font-bold mb-4">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500" data-i18n="about_title">
                         SYSTEM.PROFILE
                     </span>
                 </h2>
@@ -239,7 +282,7 @@
                         <div class="space-y-6">
                             <div class="stat-item">
                                 <div class="flex items-center justify-between mb-2">
-                                    <span class="font-mono text-sm text-gray-400">NATIONALITY</span>
+                                    <span class="font-mono text-sm text-gray-400" data-i18n="about_nationality">NATIONALITY</span>
                                     <span class="text-cyan-400 font-mono">🇩🇪 DEU</span>
                                 </div>
                                 <div class="stat-bar"><div class="stat-fill" style="width: 100%"></div></div>
@@ -247,7 +290,7 @@
 
                             <div class="stat-item">
                                 <div class="flex items-center justify-between mb-2">
-                                    <span class="font-mono text-sm text-gray-400">LOCATION</span>
+                                    <span class="font-mono text-sm text-gray-400" data-i18n="about_location">LOCATION</span>
                                     <span class="text-purple-400 font-mono">SAN_DIEGO</span>
                                 </div>
                                 <div class="stat-bar"><div class="stat-fill stat-fill-purple" style="width: 85%"></div></div>
@@ -255,15 +298,15 @@
 
                             <div class="stat-item">
                                 <div class="flex items-center justify-between mb-2">
-                                    <span class="font-mono text-sm text-gray-400">EDUCATION.LEVEL</span>
-                                    <span class="text-pink-400 font-mono">B.A_IN_PROGRESS</span>
+                                    <span class="font-mono text-sm text-gray-400" data-i18n="about_education">EDUCATION.LEVEL</span>
+                                    <span class="text-pink-400 font-mono" data-i18n="about_education_value">B.A_IN_PROGRESS</span>
                                 </div>
                                 <div class="stat-bar"><div class="stat-fill stat-fill-pink" style="width: 70%"></div></div>
                             </div>
 
                             <div class="stat-item">
                                 <div class="mb-3">
-                                    <span class="font-mono text-sm text-gray-400 block mb-2">LANGUAGES.ARRAY</span>
+                                    <span class="font-mono text-sm text-gray-400 block mb-2" data-i18n="about_languages">LANGUAGES.ARRAY</span>
                                 </div>
                                 <div class="grid grid-cols-3 gap-2">
                                     <div class="lang-chip">DE</div>
@@ -274,7 +317,7 @@
 
                             <div class="stat-item">
                                 <div class="mb-3">
-                                    <span class="font-mono text-sm text-gray-400 block mb-2">INTERESTS.TAGS</span>
+                                    <span class="font-mono text-sm text-gray-400 block mb-2" data-i18n="about_interests">INTERESTS.TAGS</span>
                                 </div>
                                 <div class="flex flex-wrap gap-2">
                                     <span class="interest-tag">RUNNING</span>
@@ -295,7 +338,7 @@
                 <!-- Right: Biography -->
                 <div class="reveal-element space-y-6">
                     <div class="glass-card-dark p-8 rounded-2xl border border-purple-500/30 holographic-card">
-                        <h3 class="font-orbitron text-2xl font-bold mb-6 text-purple-400">NARRATIVE.STREAM</h3>
+                        <h3 class="font-orbitron text-2xl font-bold mb-6 text-purple-400" data-i18n="about_narrative">NARRATIVE.STREAM</h3>
 
                         <div class="space-y-4 text-gray-300 leading-relaxed terminal-text">
                             <p class="fade-in-text">
@@ -354,7 +397,7 @@
                     <span class="font-mono text-sm text-purple-400">&lt;section id="experience"&gt;</span>
                 </div>
                 <h2 class="font-orbitron text-4xl sm:text-5xl font-bold mb-4">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500" data-i18n="exp_title">
                         EXPERIENCE.LOG
                     </span>
                 </h2>
@@ -397,10 +440,10 @@
 
                     <!-- Canon -->
                     <div class="reveal-element lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-                        <div class="hidden lg:flex justify-center order-2">
+                        <div class="hidden lg:flex justify-center">
                             <div class="timeline-node"></div>
                         </div>
-                        <div class="order-1 mb-6 lg:mb-0">
+                        <div class="mb-6 lg:mb-0">
                             <div class="glass-card-dark p-6 rounded-xl border border-purple-500/30 holographic-card experience-card hover-lift">
                                 <div class="inline-block mb-3 px-3 py-1 rounded-full bg-purple-500/20 border border-purple-500/50">
                                     <span class="font-mono text-xs text-purple-300">2024</span>
@@ -451,10 +494,10 @@
 
                     <!-- Social Media -->
                     <div class="reveal-element lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-                        <div class="hidden lg:flex justify-center order-2">
+                        <div class="hidden lg:flex justify-center">
                             <div class="timeline-node"></div>
                         </div>
-                        <div class="order-1 mb-6 lg:mb-0">
+                        <div class="mb-6 lg:mb-0">
                             <div class="glass-card-dark p-6 rounded-xl border border-cyan-500/30 holographic-card experience-card hover-lift">
                                 <div class="inline-block mb-3 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/50">
                                     <span class="font-mono text-xs text-cyan-300">2021–PRESENT</span>
@@ -489,12 +532,12 @@
                     <span class="font-mono text-sm text-pink-400">&lt;section id="projects"&gt;</span>
                 </div>
                 <h2 class="font-orbitron text-4xl sm:text-5xl font-bold mb-4">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-cyan-500">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-cyan-500" data-i18n="projects_title">
                         PROJECTS.ARRAY
                     </span>
                 </h2>
                 <div class="cyber-divider mx-auto"></div>
-                <p class="mt-4 font-mono text-cyan-400">Building AI-driven solutions for real-world challenges</p>
+                <p class="mt-4 font-mono text-cyan-400" data-i18n="projects_subtitle">Building AI-driven solutions for real-world challenges</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -705,6 +748,96 @@
         </div>
     </section>
 
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal-element">
+                <div class="inline-block mb-4">
+                    <span class="font-mono text-sm text-purple-400">&lt;section id="testimonials"&gt;</span>
+                </div>
+                <h2 class="font-orbitron text-4xl sm:text-5xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-500" data-i18n="testimonials_title">
+                        TESTIMONIALS.LOG
+                    </span>
+                </h2>
+                <div class="cyber-divider mx-auto"></div>
+                <p class="mt-4 font-mono text-cyan-400" data-i18n="testimonials_subtitle">What colleagues and collaborators say</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="reveal-element">
+                    <div class="glass-card-dark p-6 rounded-2xl border border-cyan-500/30 h-full holographic-card hover-lift">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center font-orbitron font-bold text-lg">
+                                JD
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="font-bold text-cyan-400">John Doe</h3>
+                                <p class="text-xs text-gray-400 font-mono">Senior Manager @ Company</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            "Pascal demonstrated exceptional analytical skills and creativity in solving complex AI challenges. His ability to bridge technical and policy perspectives is remarkable."
+                        </p>
+                        <div class="flex gap-1">
+                            <span class="text-cyan-400">★</span><span class="text-cyan-400">★</span><span class="text-cyan-400">★</span><span class="text-cyan-400">★</span><span class="text-cyan-400">★</span>
+                        </div>
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="reveal-element">
+                    <div class="glass-card-dark p-6 rounded-2xl border border-purple-500/30 h-full holographic-card hover-lift">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center font-orbitron font-bold text-lg">
+                                SM
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="font-bold text-purple-400">Sarah Miller</h3>
+                                <p class="text-xs text-gray-400 font-mono">Team Lead @ Tech Corp</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            "Working with Pascal on our AI automation project was fantastic. He's proactive, detail-oriented, and brings innovative solutions to every challenge."
+                        </p>
+                        <div class="flex gap-1">
+                            <span class="text-purple-400">★</span><span class="text-purple-400">★</span><span class="text-purple-400">★</span><span class="text-purple-400">★</span><span class="text-purple-400">★</span>
+                        </div>
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="reveal-element">
+                    <div class="glass-card-dark p-6 rounded-2xl border border-pink-500/30 h-full holographic-card hover-lift">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-400 to-cyan-500 flex items-center justify-center font-orbitron font-bold text-lg">
+                                MK
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="font-bold text-pink-400">Michael Kim</h3>
+                                <p class="text-xs text-gray-400 font-mono">Professor @ University</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            "Pascal is a standout student who combines technical expertise with strategic thinking. His research contributions exceeded expectations."
+                        </p>
+                        <div class="flex gap-1">
+                            <span class="text-pink-400">★</span><span class="text-pink-400">★</span><span class="text-pink-400">★</span><span class="text-pink-400">★</span><span class="text-pink-400">★</span>
+                        </div>
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section - Radar Chart Style -->
     <section id="skills" class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -844,6 +977,138 @@
         </div>
     </section>
 
+    <!-- Certificates & Awards Section -->
+    <section id="achievements" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal-element">
+                <div class="inline-block mb-4">
+                    <span class="font-mono text-sm text-cyan-400">&lt;section id="achievements"&gt;</span>
+                </div>
+                <h2 class="font-orbitron text-4xl sm:text-5xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500" data-i18n="achievements_title">
+                        ACHIEVEMENTS.ARRAY
+                    </span>
+                </h2>
+                <div class="cyber-divider mx-auto"></div>
+                <p class="mt-4 font-mono text-cyan-400" data-i18n="achievements_subtitle">Certifications, Awards & Recognition</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Awards -->
+                <div class="reveal-element">
+                    <div class="glass-card-dark p-8 rounded-2xl border border-cyan-500/30 holographic-card">
+                        <h3 class="font-orbitron text-2xl font-bold mb-6 text-cyan-400 flex items-center gap-2">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <span data-i18n="achievements_awards">AWARDS.LOG</span>
+                        </h3>
+
+                        <div class="space-y-4">
+                            <div class="achievement-item p-4 rounded-lg border border-cyan-500/20 hover:border-cyan-500/50 transition-all">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h4 class="font-bold text-cyan-300">Jugend Forscht Winner</h4>
+                                    <span class="text-xs text-gray-500 font-mono">2023</span>
+                                </div>
+                                <p class="text-sm text-gray-400">Biodegradable Shoe Materials Research</p>
+                                <div class="mt-2 flex gap-2 flex-wrap">
+                                    <span class="text-xs px-2 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">SUSTAINABILITY</span>
+                                    <span class="text-xs px-2 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">INNOVATION</span>
+                                </div>
+                            </div>
+
+                            <div class="achievement-item p-4 rounded-lg border border-purple-500/20 hover:border-purple-500/50 transition-all">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h4 class="font-bold text-purple-300">Head Boy</h4>
+                                    <span class="text-xs text-gray-500 font-mono">2022</span>
+                                </div>
+                                <p class="text-sm text-gray-400">School Leadership Recognition</p>
+                                <div class="mt-2 flex gap-2 flex-wrap">
+                                    <span class="text-xs px-2 py-1 rounded bg-purple-500/10 text-purple-400 border border-purple-500/30">LEADERSHIP</span>
+                                </div>
+                            </div>
+
+                            <div class="achievement-item p-4 rounded-lg border border-pink-500/20 hover:border-pink-500/50 transition-all">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h4 class="font-bold text-pink-300">Dean's List</h4>
+                                    <span class="text-xs text-gray-500 font-mono">2024</span>
+                                </div>
+                                <p class="text-sm text-gray-400">Academic Excellence (GPA > 3.8)</p>
+                                <div class="mt-2 flex gap-2 flex-wrap">
+                                    <span class="text-xs px-2 py-1 rounded bg-pink-500/10 text-pink-400 border border-pink-500/30">ACADEMIC</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
+                    </div>
+                </div>
+
+                <!-- Certificates -->
+                <div class="reveal-element">
+                    <div class="glass-card-dark p-8 rounded-2xl border border-purple-500/30 holographic-card">
+                        <h3 class="font-orbitron text-2xl font-bold mb-6 text-purple-400 flex items-center gap-2">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span data-i18n="achievements_certs">CERTIFICATES.STACK</span>
+                        </h3>
+
+                        <div class="space-y-4">
+                            <div class="achievement-item p-4 rounded-lg border border-purple-500/20 hover:border-purple-500/50 transition-all">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h4 class="font-bold text-purple-300">AI & Machine Learning</h4>
+                                    <span class="text-xs text-gray-500 font-mono">2024</span>
+                                </div>
+                                <p class="text-sm text-gray-400">Google Cloud Platform</p>
+                                <div class="mt-2">
+                                    <a href="#" class="text-xs text-cyan-400 hover:text-cyan-300 font-mono" data-i18n="achievements_view_cert">VIEW_CERT →</a>
+                                </div>
+                            </div>
+
+                            <div class="achievement-item p-4 rounded-lg border border-cyan-500/20 hover:border-cyan-500/50 transition-all">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h4 class="font-bold text-cyan-300">Python for Data Science</h4>
+                                    <span class="text-xs text-gray-500 font-mono">2023</span>
+                                </div>
+                                <p class="text-sm text-gray-400">IBM Data Science Professional</p>
+                                <div class="mt-2">
+                                    <a href="#" class="text-xs text-cyan-400 hover:text-cyan-300 font-mono" data-i18n="achievements_view_cert">VIEW_CERT →</a>
+                                </div>
+                            </div>
+
+                            <div class="achievement-item p-4 rounded-lg border border-pink-500/20 hover:border-pink-500/50 transition-all">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h4 class="font-bold text-pink-300">Agile Project Management</h4>
+                                    <span class="text-xs text-gray-500 font-mono">2024</span>
+                                </div>
+                                <p class="text-sm text-gray-400">Scrum Alliance CSM</p>
+                                <div class="mt-2">
+                                    <a href="#" class="text-xs text-cyan-400 hover:text-cyan-300 font-mono" data-i18n="achievements_view_cert">VIEW_CERT →</a>
+                                </div>
+                            </div>
+
+                            <div class="achievement-item p-4 rounded-lg border border-cyan-500/20 hover:border-cyan-500/50 transition-all">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h4 class="font-bold text-cyan-300">Public Policy Analysis</h4>
+                                    <span class="text-xs text-gray-500 font-mono">2023</span>
+                                </div>
+                                <p class="text-sm text-gray-400">Harvard Kennedy School (Online)</p>
+                                <div class="mt-2">
+                                    <a href="#" class="text-xs text-cyan-400 hover:text-cyan-300 font-mono" data-i18n="achievements_view_cert">VIEW_CERT →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="corner-accent-sm top-left"></div>
+                        <div class="corner-accent-sm bottom-right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section - Terminal Style -->
     <section id="contact" class="py-20 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -852,12 +1117,12 @@
                     <span class="font-mono text-sm text-purple-400">&lt;section id="contact"&gt;</span>
                 </div>
                 <h2 class="font-orbitron text-4xl sm:text-5xl font-bold mb-4">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-500">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-500" data-i18n="contact_title">
                         INIT.CONTACT
                     </span>
                 </h2>
                 <div class="cyber-divider mx-auto"></div>
-                <p class="mt-4 font-mono text-gray-400">
+                <p class="mt-4 font-mono text-gray-400" data-i18n="contact_subtitle">
                     Ready to collaborate on AI, policy, or innovation?
                 </p>
             </div>
@@ -866,7 +1131,7 @@
                 <div class="glass-card-dark p-8 md:p-12 rounded-2xl border border-cyan-500/30 holographic-card">
                     <div class="grid md:grid-cols-2 gap-8 mb-8">
                         <div>
-                            <h3 class="font-orbitron text-lg font-bold mb-4 text-cyan-400">OPPORTUNITIES.OPEN</h3>
+                            <h3 class="font-orbitron text-lg font-bold mb-4 text-cyan-400" data-i18n="contact_opportunities">OPPORTUNITIES.OPEN</h3>
                             <ul class="space-y-3 text-sm text-gray-300">
                                 <li class="flex items-start">
                                     <span class="text-cyan-400 mr-2 mt-1">▹</span>
@@ -888,7 +1153,7 @@
                         </div>
 
                         <div>
-                            <h3 class="font-orbitron text-lg font-bold mb-4 text-purple-400">EXPLORING.CURRENTLY</h3>
+                            <h3 class="font-orbitron text-lg font-bold mb-4 text-purple-400" data-i18n="contact_exploring">EXPLORING.CURRENTLY</h3>
                             <ul class="space-y-3 text-sm text-gray-300">
                                 <li class="flex items-start">
                                     <span class="text-purple-400 mr-2 mt-1">▹</span>
@@ -911,24 +1176,60 @@
                     </div>
 
                     <div class="border-t border-gray-700 pt-8">
-                        <p class="text-center text-gray-400 mb-6 font-mono text-sm">
+                        <h3 class="font-orbitron text-lg font-bold mb-6 text-center text-cyan-400" data-i18n="contact_get_in_touch">GET_IN_TOUCH</h3>
+
+                        <!-- Contact Form -->
+                        <form id="contact-form" class="space-y-4 mb-8">
+                            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                            <input type="hidden" name="subject" value="New Contact from Portfolio">
+                            <input type="hidden" name="from_name" value="Portfolio Contact Form">
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-mono text-gray-400 mb-2" data-i18n="contact_name">NAME.INPUT</label>
+                                    <input type="text" id="name" name="name" required
+                                           class="w-full px-4 py-2 bg-black/50 border border-cyan-500/30 rounded-lg focus:border-cyan-500 focus:outline-none text-white font-mono transition-all"
+                                           data-i18n-placeholder="contact_name">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-mono text-gray-400 mb-2" data-i18n="contact_email">EMAIL.INPUT</label>
+                                    <input type="email" id="email" name="email" required
+                                           class="w-full px-4 py-2 bg-black/50 border border-cyan-500/30 rounded-lg focus:border-cyan-500 focus:outline-none text-white font-mono transition-all"
+                                           data-i18n-placeholder="contact_email">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-mono text-gray-400 mb-2" data-i18n="contact_message">MESSAGE.TEXT</label>
+                                <textarea id="message" name="message" rows="4" required
+                                          class="w-full px-4 py-2 bg-black/50 border border-cyan-500/30 rounded-lg focus:border-cyan-500 focus:outline-none text-white font-mono transition-all resize-none"
+                                          data-i18n-placeholder="contact_message"></textarea>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="cyber-button-primary group">
+                                    <span class="relative z-10 font-mono font-bold" data-i18n="contact_send">SEND_MESSAGE</span>
+                                    <div class="cyber-button-glow"></div>
+                                </button>
+                            </div>
+
+                            <div id="form-status" class="text-center text-sm font-mono hidden"></div>
+                        </form>
+
+                        <p class="text-center text-gray-400 mb-6 font-mono text-sm" data-i18n="contact_connect_via">
                             $ CONNECT_VIA.email || CONNECT_VIA.linkedin || CONNECT_VIA.github
                         </p>
                         <div class="flex flex-col sm:flex-row justify-center gap-4">
-                            <a href="mailto:contact@pascalfreyer.com" class="cyber-button-primary group">
-                                <span class="relative z-10 font-mono font-bold">SEND_EMAIL</span>
-                                <div class="cyber-button-glow"></div>
+                            <a href="mailto:contact@pascalfreyer.com" class="cyber-button-secondary group">
+                                <span class="relative z-10 font-mono font-bold" data-i18n="contact_btn_email">DIRECT_EMAIL</span>
                             </a>
                             <a href="https://linkedin.com/in/pascal-freyer" target="_blank" rel="noopener noreferrer" class="cyber-button-secondary group">
-                                <span class="relative z-10 font-mono font-bold">CONNECT_LINKEDIN</span>
+                                <span class="relative z-10 font-mono font-bold" data-i18n="contact_btn_linkedin">LINKEDIN</span>
                             </a>
-                            <a href="https://github.com/pascal2gpt" target="_blank" rel="noopener noreferrer" class="cyber-button-secondary group">
-                                <span class="relative z-10 font-mono font-bold">VIEW_GITHUB</span>
+                            <a href="/resume-pascal-freyer.pdf" download class="cyber-button-secondary group">
+                                <span class="relative z-10 font-mono font-bold" data-i18n="contact_btn_cv">DOWNLOAD_CV</span>
                             </a>
                         </div>
-                        <p class="text-center text-xs text-gray-600 mt-6 font-mono">
-                            // UPDATE WITH ACTUAL CONTACT INFO
-                        </p>
                     </div>
 
                     <div class="corner-accent top-left"></div>
@@ -946,13 +1247,13 @@
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <h3 class="font-orbitron text-lg font-bold mb-4 text-cyan-400">PASCAL.FREYER</h3>
-                    <p class="text-gray-400 text-sm font-mono">
+                    <p class="text-gray-400 text-sm font-mono" data-i18n="footer_tagline">
                         Building the future at the intersection of AI, policy, and entrepreneurship.
                     </p>
                 </div>
 
                 <div>
-                    <h3 class="font-orbitron text-sm font-semibold mb-4 text-purple-400">NAVIGATION.TREE</h3>
+                    <h3 class="font-orbitron text-sm font-semibold mb-4 text-purple-400" data-i18n="footer_nav">NAVIGATION.TREE</h3>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#about" class="text-gray-400 hover:text-cyan-400 transition-colors font-mono">about()</a></li>
                         <li><a href="#experience" class="text-gray-400 hover:text-cyan-400 transition-colors font-mono">experience()</a></li>
@@ -962,7 +1263,7 @@
                 </div>
 
                 <div>
-                    <h3 class="font-orbitron text-sm font-semibold mb-4 text-pink-400">CONNECT.SOCIAL</h3>
+                    <h3 class="font-orbitron text-sm font-semibold mb-4 text-pink-400" data-i18n="footer_social">CONNECT.SOCIAL</h3>
                     <div class="space-y-3">
                         <a href="https://github.com/pascal2gpt" target="_blank" rel="noopener noreferrer"
                            class="flex items-center text-gray-400 hover:text-cyan-400 transition-colors text-sm font-mono group">
@@ -990,8 +1291,8 @@
             </div>
 
             <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-500 font-mono text-sm">&copy; 2025 Pascal Dominik Freyer. All rights reserved.</p>
-                <p class="mt-2 text-xs text-gray-600 font-mono">// Built with cyberpunk aesthetics & glassmorphism</p>
+                <p class="text-gray-500 font-mono text-sm" data-i18n="footer_copyright">&copy; 2025 Pascal Dominik Freyer. All rights reserved.</p>
+                <p class="mt-2 text-xs text-gray-600 font-mono" data-i18n="footer_built_with">// Built with cyberpunk aesthetics & glassmorphism</p>
                 <p class="mt-1 text-xs text-gray-700 font-mono">&lt;/html&gt;</p>
             </div>
         </div>

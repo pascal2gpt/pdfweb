@@ -129,6 +129,364 @@ if (canvas) {
 }
 
 // ===================================
+// Multi-Language System
+// ===================================
+
+const translations = {
+    de: {
+        // Navigation
+        nav_home: 'START',
+        nav_about: 'ÜBER MICH',
+        nav_experience: 'ERFAHRUNG',
+        nav_projects: 'PROJEKTE',
+        nav_blog: 'BLOG',
+        nav_testimonials: 'REFERENZEN',
+        nav_achievements: 'ERFOLGE',
+        nav_contact: 'KONTAKT',
+        nav_github: 'GITHUB',
+
+        // Hero Section
+        hero_status: 'SYSTEM.AKTIV // UCSD',
+        hero_tagline_1: 'KI, Politik & Innovation vereinen',
+        hero_tagline_2: 'Lösungen für Bildung entwickeln',
+        hero_tagline_3: 'Banking-Workflows automatisieren',
+        hero_tagline_4: 'Tech & Public Policy verbinden',
+        hero_btn_projects: 'PROJEKTE_ERKUNDEN',
+        hero_btn_contact: 'KONTAKT_INITIIEREN',
+        hero_btn_cv: 'LEBENSLAUF_LADEN',
+        hero_scroll: 'NACH_UNTEN_SCROLLEN',
+
+        // About Section
+        about_title: 'SYSTEM.PROFIL',
+        about_nationality: 'NATIONALITÄT',
+        about_location: 'STANDORT',
+        about_education: 'BILDUNG.LEVEL',
+        about_education_value: 'B.A_IM_GANGE',
+        about_languages: 'SPRACHEN.ARRAY',
+        about_interests: 'INTERESSEN.TAGS',
+        about_narrative: 'NARRATIV.STREAM',
+
+        // Experience Section
+        exp_title: 'ERFAHRUNGS.LOG',
+
+        // Projects Section
+        projects_title: 'PROJEKTE.ARRAY',
+        projects_subtitle: 'KI-gesteuerte Lösungen für reale Herausforderungen entwickeln',
+
+        // Blog Section
+        blog_title: 'EINBLICKE.BLOG',
+        blog_subtitle: 'Gedanken zu KI, Politik und Innovation',
+        blog_read_more: 'MEHR_LESEN',
+        blog_min_read: 'MIN LESEZEIT',
+        blog_view_all: 'ALLE_ARTIKEL_ANZEIGEN',
+
+        // Testimonials Section
+        testimonials_title: 'REFERENZEN.LOG',
+        testimonials_subtitle: 'Was Kollegen und Mitarbeiter sagen',
+
+        // Achievements Section
+        achievements_title: 'ERFOLGE.ARRAY',
+        achievements_subtitle: 'Zertifikate, Auszeichnungen & Anerkennung',
+        achievements_awards: 'AUSZEICHNUNGEN.LOG',
+        achievements_certs: 'ZERTIFIKATE.STACK',
+        achievements_view_cert: 'ZERTIFIKAT_ANSEHEN →',
+
+        // Contact Section
+        contact_title: 'KONTAKT.INITIIEREN',
+        contact_subtitle: 'Bereit für KI, Politik oder Innovation zusammenzuarbeiten?',
+        contact_opportunities: 'GELEGENHEITEN.OFFEN',
+        contact_exploring: 'AKTUELL.ERKUNDEN',
+        contact_get_in_touch: 'IN_KONTAKT_TRETEN',
+        contact_name: 'NAME.EINGABE',
+        contact_email: 'EMAIL.EINGABE',
+        contact_message: 'NACHRICHT.TEXT',
+        contact_send: 'NACHRICHT_SENDEN',
+        contact_sending: 'SENDEN...',
+        contact_success: '✓ NACHRICHT_GESENDET // Wir melden uns bald!',
+        contact_error: '✗ FEHLER // Bitte versuchen Sie es erneut oder nutzen Sie Direct Email',
+        contact_connect_via: '$ VERBINDEN_VIA.email || VERBINDEN_VIA.linkedin || VERBINDEN_VIA.github',
+        contact_btn_email: 'DIREKT_EMAIL',
+        contact_btn_linkedin: 'LINKEDIN',
+        contact_btn_cv: 'LEBENSLAUF_LADEN',
+
+        // Footer
+        footer_tagline: 'Die Zukunft an der Schnittstelle von KI, Politik und Unternehmertum gestalten.',
+        footer_nav: 'NAVIGATION.BAUM',
+        footer_social: 'VERBINDEN.SOZIAL',
+        footer_copyright: '© 2025 Pascal Dominik Freyer. Alle Rechte vorbehalten.',
+        footer_built_with: '// Gebaut mit Cyberpunk-Ästhetik & Glassmorphismus',
+    },
+    en: {
+        // Navigation
+        nav_home: 'HOME',
+        nav_about: 'ABOUT',
+        nav_experience: 'EXPERIENCE',
+        nav_projects: 'PROJECTS',
+        nav_blog: 'BLOG',
+        nav_testimonials: 'TESTIMONIALS',
+        nav_achievements: 'ACHIEVEMENTS',
+        nav_contact: 'CONTACT',
+        nav_github: 'GITHUB',
+
+        // Hero Section
+        hero_status: 'SYSTEM.ACTIVE // UCSD',
+        hero_tagline_1: 'Combining AI, Policy & Innovation',
+        hero_tagline_2: 'Building Solutions for Education',
+        hero_tagline_3: 'Automating Banking Workflows',
+        hero_tagline_4: 'Bridging Tech & Public Policy',
+        hero_btn_projects: 'EXPLORE_PROJECTS',
+        hero_btn_contact: 'INIT_CONTACT',
+        hero_btn_cv: 'DOWNLOAD_CV',
+        hero_scroll: 'SCROLL_DOWN',
+
+        // About Section
+        about_title: 'SYSTEM.PROFILE',
+        about_nationality: 'NATIONALITY',
+        about_location: 'LOCATION',
+        about_education: 'EDUCATION.LEVEL',
+        about_education_value: 'B.A_IN_PROGRESS',
+        about_languages: 'LANGUAGES.ARRAY',
+        about_interests: 'INTERESTS.TAGS',
+        about_narrative: 'NARRATIVE.STREAM',
+
+        // Experience Section
+        exp_title: 'EXPERIENCE.LOG',
+
+        // Projects Section
+        projects_title: 'PROJECTS.ARRAY',
+        projects_subtitle: 'Building AI-driven solutions for real-world challenges',
+
+        // Blog Section
+        blog_title: 'INSIGHTS.BLOG',
+        blog_subtitle: 'Thoughts on AI, policy, and innovation',
+        blog_read_more: 'READ_MORE',
+        blog_min_read: 'MIN READ',
+        blog_view_all: 'VIEW_ALL_ARTICLES',
+
+        // Testimonials Section
+        testimonials_title: 'TESTIMONIALS.LOG',
+        testimonials_subtitle: 'What colleagues and collaborators say',
+
+        // Achievements Section
+        achievements_title: 'ACHIEVEMENTS.ARRAY',
+        achievements_subtitle: 'Certifications, Awards & Recognition',
+        achievements_awards: 'AWARDS.LOG',
+        achievements_certs: 'CERTIFICATES.STACK',
+        achievements_view_cert: 'VIEW_CERT →',
+
+        // Contact Section
+        contact_title: 'INIT.CONTACT',
+        contact_subtitle: 'Ready to collaborate on AI, policy, or innovation?',
+        contact_opportunities: 'OPPORTUNITIES.OPEN',
+        contact_exploring: 'EXPLORING.CURRENTLY',
+        contact_get_in_touch: 'GET_IN_TOUCH',
+        contact_name: 'NAME.INPUT',
+        contact_email: 'EMAIL.INPUT',
+        contact_message: 'MESSAGE.TEXT',
+        contact_send: 'SEND_MESSAGE',
+        contact_sending: 'SENDING...',
+        contact_success: '✓ MESSAGE_SENT // We\'ll be in touch soon!',
+        contact_error: '✗ ERROR // Please try again or use direct email',
+        contact_connect_via: '$ CONNECT_VIA.email || CONNECT_VIA.linkedin || CONNECT_VIA.github',
+        contact_btn_email: 'DIRECT_EMAIL',
+        contact_btn_linkedin: 'LINKEDIN',
+        contact_btn_cv: 'DOWNLOAD_CV',
+
+        // Footer
+        footer_tagline: 'Building the future at the intersection of AI, policy, and entrepreneurship.',
+        footer_nav: 'NAVIGATION.TREE',
+        footer_social: 'CONNECT.SOCIAL',
+        footer_copyright: '© 2025 Pascal Dominik Freyer. All rights reserved.',
+        footer_built_with: '// Built with cyberpunk aesthetics & glassmorphism',
+    }
+};
+
+class LanguageManager {
+    constructor() {
+        this.currentLang = this.detectLanguage();
+        this.init();
+    }
+
+    detectLanguage() {
+        // Check saved preference first
+        const savedLang = localStorage.getItem('language');
+        if (savedLang && (savedLang === 'de' || savedLang === 'en')) {
+            return savedLang;
+        }
+
+        // Detect browser language
+        const browserLang = navigator.language || navigator.userLanguage;
+
+        // If browser language is German, use German
+        if (browserLang.startsWith('de')) {
+            return 'de';
+        }
+
+        // Default to German as fallback (as requested)
+        return 'de';
+    }
+
+    init() {
+        // Apply initial language
+        this.applyTranslations(this.currentLang);
+
+        // Update language toggle buttons
+        this.updateLanguageToggles();
+
+        // Add event listeners
+        this.addEventListeners();
+    }
+
+    addEventListeners() {
+        const langToggles = document.querySelectorAll('[data-lang]');
+        langToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = toggle.getAttribute('data-lang');
+                this.switchLanguage(lang);
+            });
+        });
+    }
+
+    switchLanguage(lang) {
+        if (lang !== 'de' && lang !== 'en') return;
+
+        this.currentLang = lang;
+        localStorage.setItem('language', lang);
+        this.applyTranslations(lang);
+        this.updateLanguageToggles();
+
+        // Update typewriter if it's running
+        if (window.typeWriterInstance) {
+            const texts = lang === 'de'
+                ? [
+                    'KI, Politik & Innovation vereinen',
+                    'Lösungen für Bildung entwickeln',
+                    'Banking-Workflows automatisieren',
+                    'Tech & Public Policy verbinden'
+                ]
+                : [
+                    'Combining AI, Policy & Innovation',
+                    'Building Solutions for Education',
+                    'Automating Banking Workflows',
+                    'Bridging Tech & Public Policy'
+                ];
+            window.typeWriterInstance.texts = texts;
+            window.typeWriterInstance.textIndex = 0;
+            window.typeWriterInstance.charIndex = 0;
+        }
+    }
+
+    applyTranslations(lang) {
+        const trans = translations[lang];
+
+        // Update all elements with data-i18n attribute
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            if (trans[key]) {
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = trans[key];
+                } else {
+                    element.textContent = trans[key];
+                }
+            }
+        });
+    }
+
+    updateLanguageToggles() {
+        document.querySelectorAll('[data-lang]').forEach(toggle => {
+            const lang = toggle.getAttribute('data-lang');
+            if (lang === this.currentLang) {
+                toggle.classList.add('active-lang');
+            } else {
+                toggle.classList.remove('active-lang');
+            }
+        });
+    }
+
+    getCurrentLanguage() {
+        return this.currentLang;
+    }
+}
+
+// Initialize language manager
+const languageManager = new LanguageManager();
+
+// ===================================
+// Dark/Light Mode Theme Toggle
+// ===================================
+
+class ThemeManager {
+    constructor() {
+        this.themeToggle = document.getElementById('theme-toggle');
+        this.themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        this.darkIcon = document.getElementById('theme-toggle-dark-icon');
+        this.lightIcon = document.getElementById('theme-toggle-light-icon');
+        this.mobileText = document.getElementById('theme-toggle-mobile-text');
+
+        this.init();
+    }
+
+    init() {
+        // Check for saved theme preference or default to system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'light' || (!savedTheme && !systemPrefersDark)) {
+            this.setLightMode();
+        } else {
+            this.setDarkMode();
+        }
+
+        // Add event listeners
+        if (this.themeToggle) {
+            this.themeToggle.addEventListener('click', () => this.toggleTheme());
+        }
+        if (this.themeToggleMobile) {
+            this.themeToggleMobile.addEventListener('click', () => this.toggleTheme());
+        }
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    this.setDarkMode();
+                } else {
+                    this.setLightMode();
+                }
+            }
+        });
+    }
+
+    toggleTheme() {
+        if (document.body.classList.contains('light-mode')) {
+            this.setDarkMode();
+            localStorage.setItem('theme', 'dark');
+        } else {
+            this.setLightMode();
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    setLightMode() {
+        document.body.classList.add('light-mode');
+        if (this.lightIcon) this.lightIcon.classList.remove('hidden');
+        if (this.darkIcon) this.darkIcon.classList.add('hidden');
+        if (this.mobileText) this.mobileText.textContent = 'DARK MODE';
+    }
+
+    setDarkMode() {
+        document.body.classList.remove('light-mode');
+        if (this.darkIcon) this.darkIcon.classList.remove('hidden');
+        if (this.lightIcon) this.lightIcon.classList.add('hidden');
+        if (this.mobileText) this.mobileText.textContent = 'LIGHT MODE';
+    }
+}
+
+// Initialize theme manager
+new ThemeManager();
+
+// ===================================
 // Typewriter Effect
 // ===================================
 
@@ -173,16 +531,25 @@ class TypeWriter {
     }
 }
 
-// Initialize typewriter
+// Initialize typewriter with language support
 const typingElement = document.getElementById('typing-text');
 if (typingElement) {
-    const texts = [
-        'Combining AI, Policy & Innovation',
-        'Building Solutions for Education',
-        'Automating Banking Workflows',
-        'Bridging Tech & Public Policy'
-    ];
-    new TypeWriter(typingElement, texts, 80);
+    // Get initial language from language manager
+    const initialLang = languageManager.getCurrentLanguage();
+    const texts = initialLang === 'de'
+        ? [
+            'KI, Politik & Innovation vereinen',
+            'Lösungen für Bildung entwickeln',
+            'Banking-Workflows automatisieren',
+            'Tech & Public Policy verbinden'
+        ]
+        : [
+            'Combining AI, Policy & Innovation',
+            'Building Solutions for Education',
+            'Automating Banking Workflows',
+            'Bridging Tech & Public Policy'
+        ];
+    window.typeWriterInstance = new TypeWriter(typingElement, texts, 80);
 }
 
 // ===================================
@@ -671,3 +1038,50 @@ createSkipLink();
 
 console.log(`%c\n© ${currentYear} Pascal Dominik Freyer`, 'color: #00f3ff; font-size: 10px;');
 console.log('%cAll systems operational. Welcome to the future.', 'color: #b026ff; font-size: 10px;');
+
+// ===================================
+// Contact Form Submission
+// ===================================
+
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const statusEl = formStatus;
+
+        // Show loading state
+        statusEl.textContent = 'SENDING...';
+        statusEl.className = 'text-center text-sm font-mono text-cyan-400';
+        statusEl.classList.remove('hidden');
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                statusEl.textContent = '✓ MESSAGE_SENT // We\'ll be in touch soon!';
+                statusEl.className = 'text-center text-sm font-mono text-green-400';
+                contactForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    statusEl.classList.add('hidden');
+                }, 5000);
+            } else {
+                throw new Error(data.message || 'Form submission failed');
+            }
+        } catch (error) {
+            statusEl.textContent = '✗ ERROR // Please try again or use direct email';
+            statusEl.className = 'text-center text-sm font-mono text-red-400';
+            console.error('Form submission error:', error);
+        }
+    });
+}
