@@ -139,7 +139,7 @@ const translations = {
         nav_about: 'ÜBER MICH',
         nav_experience: 'ERFAHRUNG',
         nav_projects: 'PROJEKTE',
-        nav_blog: 'BLOG',
+
         nav_testimonials: 'REFERENZEN',
         nav_achievements: 'ERFOLGE',
         nav_contact: 'KONTAKT',
@@ -173,12 +173,7 @@ const translations = {
         projects_title: 'PROJEKTE.ARRAY',
         projects_subtitle: 'KI-gesteuerte Lösungen für reale Herausforderungen entwickeln',
 
-        // Blog Section
-        blog_title: 'EINBLICKE.BLOG',
-        blog_subtitle: 'Gedanken zu KI, Politik und Innovation',
-        blog_read_more: 'MEHR_LESEN',
-        blog_min_read: 'MIN LESEZEIT',
-        blog_view_all: 'ALLE_ARTIKEL_ANZEIGEN',
+
 
         // Testimonials Section
         testimonials_title: 'REFERENZEN.LOG',
@@ -222,7 +217,7 @@ const translations = {
         nav_about: 'ABOUT',
         nav_experience: 'EXPERIENCE',
         nav_projects: 'PROJECTS',
-        nav_blog: 'BLOG',
+
         nav_testimonials: 'TESTIMONIALS',
         nav_achievements: 'ACHIEVEMENTS',
         nav_contact: 'CONTACT',
@@ -256,12 +251,7 @@ const translations = {
         projects_title: 'PROJECTS.ARRAY',
         projects_subtitle: 'Building AI-driven solutions for real-world challenges',
 
-        // Blog Section
-        blog_title: 'INSIGHTS.BLOG',
-        blog_subtitle: 'Thoughts on AI, policy, and innovation',
-        blog_read_more: 'READ_MORE',
-        blog_min_read: 'MIN READ',
-        blog_view_all: 'VIEW_ALL_ARTICLES',
+
 
         // Testimonials Section
         testimonials_title: 'TESTIMONIALS.LOG',
@@ -907,7 +897,7 @@ createScrollProgress();
 // ===================================
 
 document.querySelectorAll('.cyber-button-primary, .cyber-button-secondary').forEach(button => {
-    button.addEventListener('click', function(e) {
+    button.addEventListener('click', function (e) {
         // Create ripple effect
         const ripple = document.createElement('span');
         const rect = this.getBoundingClientRect();
@@ -1039,49 +1029,4 @@ createSkipLink();
 console.log(`%c\n© ${currentYear} Pascal Dominik Freyer`, 'color: #00f3ff; font-size: 10px;');
 console.log('%cAll systems operational. Welcome to the future.', 'color: #b026ff; font-size: 10px;');
 
-// ===================================
-// Contact Form Submission
-// ===================================
 
-const contactForm = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        const formData = new FormData(contactForm);
-        const statusEl = formStatus;
-
-        // Show loading state
-        statusEl.textContent = 'SENDING...';
-        statusEl.className = 'text-center text-sm font-mono text-cyan-400';
-        statusEl.classList.remove('hidden');
-
-        try {
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-                statusEl.textContent = '✓ MESSAGE_SENT // We\'ll be in touch soon!';
-                statusEl.className = 'text-center text-sm font-mono text-green-400';
-                contactForm.reset();
-
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    statusEl.classList.add('hidden');
-                }, 5000);
-            } else {
-                throw new Error(data.message || 'Form submission failed');
-            }
-        } catch (error) {
-            statusEl.textContent = '✗ ERROR // Please try again or use direct email';
-            statusEl.className = 'text-center text-sm font-mono text-red-400';
-            console.error('Form submission error:', error);
-        }
-    });
-}
