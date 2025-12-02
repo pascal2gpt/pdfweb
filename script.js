@@ -165,9 +165,16 @@ const translations = {
         about_languages: 'SPRACHEN.ARRAY',
         about_interests: 'INTERESSEN.TAGS',
         about_narrative: 'NARRATIV.STREAM',
+        narrative_p1: '<span class="text-cyan-400 font-mono">&gt;</span> Student der Liberal Arts & Sciences am <span class="highlight-text">University College Maastricht</span>, der <span class="highlight-text">KI</span>, <span class="highlight-text">Betriebswirtschaft</span> und <span class="highlight-text">Public Policy</span> verbindet.',
+        narrative_p2: '<span class="text-purple-400 font-mono">&gt;</span> Derzeit aktiv im Innovations-Ökosystem der <span class="highlight-text">UC San Diego</span>, Studium von KI, Kognition und Entscheidungssystemen.',
+        narrative_p3: '<span class="text-pink-400 font-mono">&gt;</span> Startpunkt: Obersulm, Deutschland. Ehemaliger Schülersprecher. Gründer einer <span class="highlight-text">Fair-Trade-Schulkleidungsfirma</span>. Ausgezeichnet für Forschung zu <span class="highlight-text">biologisch abbaubaren Schuhen</span> (4x weichere Materialien).',
+        narrative_p4: '<span class="text-cyan-400 font-mono">&gt;</span> Praxiserfahrung: <span class="highlight-text">Europäisches Parlament</span> Policy Research → <span class="highlight-text">Helaba</span> KI-Automatisierung → Aufbau von <span class="highlight-text">EduGenius</span> & <span class="highlight-text">Onboarding Buddy</span>.',
 
         // Experience Section
         exp_title: 'ERFAHRUNGS.LOG',
+        exp_oneticket_desc: 'Gründung einer einfachen, kostengünstigen Ticketing-Plattform für kleine und mittlere Events. Unterstützung unabhängiger Organisatoren und Studentenvereinigungen. 1.000+ Nutzer, 50+ gehostete Events, 0,30€ Pauschalgebühr.',
+        exp_denso_desc: 'Marktforscher für Digitale Transformation in der After Market & Industrial Solutions Business Unit (AMIS BU). Hybride Rolle mit Sitz in Amsterdam, Nordholland.',
+        exp_helaba_desc: 'KI-Integration und Strategie in Operations & Prozessoptimierung. Entwicklung einer KI-Onboarding-App mit Google Gen AI SDK. Design von KI-Workflow-Automatisierung mit Datenklassifizierung, Microsoft API-Integration und Fehler-Routing mittels n8n und Google AI Studio. Präsentation der Lösungen vor Operations & Finance Abteilungen.',
 
         // Projects Section
         projects_title: 'PROJEKTE.ARRAY',
@@ -243,9 +250,16 @@ const translations = {
         about_languages: 'LANGUAGES.ARRAY',
         about_interests: 'INTERESTS.TAGS',
         about_narrative: 'NARRATIVE.STREAM',
+        narrative_p1: '<span class="text-cyan-400 font-mono">&gt;</span> German Liberal Arts & Sciences student at <span class="highlight-text">University College Maastricht</span>, synthesizing <span class="highlight-text">AI</span>, <span class="highlight-text">business economics</span>, and <span class="highlight-text">public policy</span>.',
+        narrative_p2: '<span class="text-purple-400 font-mono">&gt;</span> Currently interfacing with <span class="highlight-text">UC San Diego</span>\'s innovation ecosystem, studying AI, cognition, and decision-making systems.',
+        narrative_p3: '<span class="text-pink-400 font-mono">&gt;</span> Journey initialized in Obersulm, Germany. Former Head Boy. Founded <span class="highlight-text">fair-trade uniform company</span>. Won awards for <span class="highlight-text">biodegradable shoe research</span> (4× softer materials).',
+        narrative_p4: '<span class="text-cyan-400 font-mono">&gt;</span> Field experience: <span class="highlight-text">European Parliament</span> policy research → <span class="highlight-text">Helaba</span> AI automation → Building <span class="highlight-text">EduGenius</span> & <span class="highlight-text">Onboarding Buddy</span>.',
 
         // Experience Section
         exp_title: 'EXPERIENCE.LOG',
+        exp_oneticket_desc: 'Founded simple-to-use, affordable ticketing platform for small and mid-sized events. Empowering independent organizers and student associations. 1,000+ users, 50+ events hosted, €0.30 flat fee.',
+        exp_denso_desc: 'Market Researcher in Digital Transformation for After Market & Industrial Solutions Business Unit (AMIS BU). Hybrid role based in Amsterdam, Noord-Holland.',
+        exp_helaba_desc: 'AI integration and strategy in Operations & Process Optimization. Built KI-Onboarding-App with Google Gen AI SDK. Designed KI-Workflow automation with data classification, Microsoft API integration, and error routing using n8n and Google AI Studio. Presented solutions to Operations & Finance departments.',
 
         // Projects Section
         projects_title: 'PROJECTS.ARRAY',
@@ -376,11 +390,26 @@ class LanguageManager {
             if (trans[key]) {
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     element.placeholder = trans[key];
+                } else if (element.tagName === 'P') {
+                    // Use innerHTML for paragraphs to support HTML tags in translations
+                    // or preserve existing structure if translation is just text
+                    // But here we want to replace the whole content with the translation
+                    // which might contain HTML tags if we defined them in the translation string.
+                    // However, our current translation strings are plain text.
+                    // If we want to keep the spans (like >), we need to include them in the translation string
+                    // OR only replace the text nodes.
+                    // Given the current setup, the easiest way is to include the HTML in the translation strings
+                    // or just use innerHTML and accept that we replace the content.
+                    // Let's update the translation strings to include the HTML structure where needed.
+                    element.innerHTML = trans[key];
                 } else {
                     element.textContent = trans[key];
                 }
+            } else {
+                console.warn(`Missing translation for key: ${key} in language: ${lang}`);
             }
         });
+        console.log(`Applied translations for ${lang}`);
     }
 
     updateLanguageToggles() {
