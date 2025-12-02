@@ -175,6 +175,8 @@ const translations = {
         exp_oneticket_desc: 'Gründung einer einfachen, kostengünstigen Ticketing-Plattform für kleine und mittlere Events. Unterstützung unabhängiger Organisatoren und Studentenvereinigungen. 1.000+ Nutzer, 50+ gehostete Events, 0,30€ Pauschalgebühr.',
         exp_denso_desc: 'Marktforscher für Digitale Transformation in der After Market & Industrial Solutions Business Unit (AMIS BU). Hybride Rolle mit Sitz in Amsterdam, Nordholland.',
         exp_helaba_desc: 'KI-Integration und Strategie in Operations & Prozessoptimierung. Entwicklung einer KI-Onboarding-App mit Google Gen AI SDK. Design von KI-Workflow-Automatisierung mit Datenklassifizierung, Microsoft API-Integration und Fehler-Routing mittels n8n und Google AI Studio. Präsentation der Lösungen vor Operations & Finance Abteilungen.',
+        exp_ucmsa_desc: 'Vorsitzender des Social Boards bei UCMSA - Universalis. Leitung des Social Boards und Organisation von Veranstaltungen für die Studentengemeinschaft.',
+        exp_canon_desc: 'Teilnahme an der SCOPE Maastricht Community Case Challenge. Beratung von Canon Printing Production beim Aufbau eines eigenen Inkubators für gesteigerte Innovation und Geschäftswachstum. Zusammenarbeit mit BCG-Beratern und akademischen Beratern.',
 
         // Projects Section
         projects_title: 'PROJEKTE.ARRAY',
@@ -260,6 +262,8 @@ const translations = {
         exp_oneticket_desc: 'Founded simple-to-use, affordable ticketing platform for small and mid-sized events. Empowering independent organizers and student associations. 1,000+ users, 50+ events hosted, €0.30 flat fee.',
         exp_denso_desc: 'Market Researcher in Digital Transformation for After Market & Industrial Solutions Business Unit (AMIS BU). Hybrid role based in Amsterdam, Noord-Holland.',
         exp_helaba_desc: 'AI integration and strategy in Operations & Process Optimization. Built KI-Onboarding-App with Google Gen AI SDK. Designed KI-Workflow automation with data classification, Microsoft API integration, and error routing using n8n and Google AI Studio. Presented solutions to Operations & Finance departments.',
+        exp_ucmsa_desc: 'Social Board Chair at UCMSA - Universalis. Led the social board and organized events for the student community.',
+        exp_canon_desc: 'Participated in SCOPE Maastricht\'s Community Case Challenge. Consulted Canon Printing Production in setting up its own Incubator for enhanced innovation and business growth. Cooperated with BCG consultants and academic advisors.',
 
         // Projects Section
         projects_title: 'PROJECTS.ARRAY',
