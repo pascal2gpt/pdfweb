@@ -1062,4 +1062,89 @@ createSkipLink();
 console.log(`%c\n© ${currentYear} Pascal Dominik Freyer`, 'color: #00f3ff; font-size: 10px;');
 console.log('%cAll systems operational. Welcome to the future.', 'color: #b026ff; font-size: 10px;');
 
+// ===================================
+// Firebase Integration & Newsletter
+// ===================================
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+// TODO: Replace the following with your app's Firebase project configuration
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase
+let db;
+try {
+    const app = initializeApp(firebaseConfig);
+    db = getFirestore(app);
+    console.log('%c🔥 Firebase Initialized', 'color: #FFA000; font-weight: bold;');
+} catch (error) {
+    console.warn('Firebase initialization failed (expected if keys are missing):', error);
+}
+
+// Handle Newsletter Submission
+const newsletterForm = document.getElementById('newsletter-form');
+const newsletterMessage = document.getElementById('newsletter-message');
+
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const emailInput = document.getElementById('newsletter-email');
+        const email = emailInput.value;
+        const submitBtn = newsletterForm.querySelector('button');
+        const originalBtnText = submitBtn.innerHTML;
+
+        // Visual Feedback - Loading
+        submitBtn.innerHTML = '<span class="relative z-10 font-mono font-bold">SENDING...</span>';
+        submitBtn.disabled = true;
+
+        try {
+            if (!db) throw new Error("Firebase not initialized");
+
+            // Add to Firestore
+            await addDoc(collection(db, "subscribers"), {
+                email: email,
+                timestamp: serverTimestamp(),
+                source: 'website_newsletter'
+            });
+
+            // Success Message
+            newsletterMessage.textContent = "✓ SUBSCRIBED.WELCOME_TO_THE_JOURNEY";
+            newsletterMessage.className = "mt-4 text-sm font-mono text-cyan-400 block typing-text-fast";
+            emailInput.value = '';
+
+            // Reset button after delay
+            setTimeout(() => {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }, 3000);
+
+        } catch (error) {
+            console.error("Error adding document: ", error);
+
+            // Fallback for demo/simulation (if no firebase config)
+            if (error.message.includes("Firebase not initialized") || error.code === "permission-denied") {
+                console.log(`%c[SIMULATION] Subscription for: ${email}`, 'color: #00ff00');
+                newsletterMessage.textContent = "✓ [SIMULATION] SUBSCRIBED.CHECK_CONSOLE";
+                newsletterMessage.className = "mt-4 text-sm font-mono text-cyan-400 block";
+            } else {
+                newsletterMessage.textContent = "✗ ERROR.PLEASE_RETRY";
+                newsletterMessage.className = "mt-4 text-sm font-mono text-pink-500 block";
+            }
+
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+        }
+    });
+}
+
+
 
