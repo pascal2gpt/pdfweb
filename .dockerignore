@@ -1,0 +1,7 @@
+.git
+.github
+functions
+firebase.json
+README.md
+node_modules
+.DS_Store
