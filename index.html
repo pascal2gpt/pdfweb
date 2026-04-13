@@ -248,18 +248,18 @@
 
                         <!-- Language Switcher -->
                         <div class="ml-2 flex items-center space-x-1 border-l border-gray-700 pl-2">
-                            <button data-lang="de"
+                            <button data-lang="de" aria-label="Switch language to German"
                                 class="px-3 py-1 rounded-lg font-mono text-xs nav-link-cyber hover:bg-cyan-500/10 transition-all">
                                 DE
                             </button>
-                            <button data-lang="en"
+                            <button data-lang="en" aria-label="Switch language to English"
                                 class="px-3 py-1 rounded-lg font-mono text-xs nav-link-cyber hover:bg-cyan-500/10 transition-all">
                                 EN
                             </button>
                         </div>
 
                         <!-- Theme Toggle -->
-                        <button id="theme-toggle"
+                        <button id="theme-toggle" aria-label="Toggle theme"
                             class="ml-2 p-2 rounded-lg nav-link-cyber hover:bg-cyan-500/10 transition-all"
                             title="Toggle theme">
                             <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor"
@@ -276,7 +276,7 @@
                     </div>
 
                     <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg neon-border-cyan">
+                    <button id="mobile-menu-button" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-2 rounded-lg neon-border-cyan">
                         <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16"></path>
@@ -287,7 +287,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden mx-4 mt-2">
+        <div id="mobile-menu" class="hidden md:hidden mx-4 mt-2 transition-all duration-300 transform origin-top opacity-0 scale-y-95 pointer-events-none">
             <div class="glass-card rounded-2xl p-4 space-y-2 border border-cyan-500/30">
                 <a href="#home" class="block px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm"
                     data-i18n="nav_home">HOME</a>
@@ -309,16 +309,16 @@
                         <span data-i18n="nav_github">GITHUB</span>
                     </a>
                     <div class="flex items-center space-x-2 px-4 py-2">
-                        <button data-lang="de"
+                        <button data-lang="de" aria-label="Switch language to German"
                             class="flex-1 px-3 py-2 rounded-lg font-mono text-xs nav-link-cyber hover:bg-cyan-500/10 transition-all text-center">
                             DE
                         </button>
-                        <button data-lang="en"
+                        <button data-lang="en" aria-label="Switch language to English"
                             class="flex-1 px-3 py-2 rounded-lg font-mono text-xs nav-link-cyber hover:bg-cyan-500/10 transition-all text-center">
                             EN
                         </button>
                     </div>
-                    <button id="theme-toggle-mobile"
+                    <button id="theme-toggle-mobile" aria-label="Toggle theme"
                         class="flex items-center w-full px-4 py-2 rounded-lg nav-link-cyber font-mono text-sm">
                         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path
@@ -331,6 +331,8 @@
             </div>
         </div>
     </nav>
+
+    <main>
 
     <!-- Hero Section - Cyberpunk -->
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -1559,6 +1561,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer - Terminal Style -->
     <footer class="py-12 relative border-t border-gray-800">
