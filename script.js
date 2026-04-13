@@ -41,6 +41,11 @@ class ParticleSystem {
     }
 
     animate() {
+        if (document.hidden) {
+            requestAnimationFrame(() => this.animate());
+            return;
+        }
+
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         this.particles.forEach((particle, index) => {
@@ -584,14 +589,38 @@ const mobileMenu = document.getElementById('mobile-menu');
 
 if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+        const isHidden = mobileMenu.classList.contains('hidden');
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+
+        if (isHidden) {
+            // Unhide first, then fade in
+            mobileMenu.classList.remove('hidden');
+            // Give browser time to remove display:none before animating
+            setTimeout(() => {
+                mobileMenu.classList.remove('opacity-0', 'scale-y-95', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100', 'scale-y-100', 'pointer-events-auto');
+            }, 10);
+        } else {
+            // Fade out first, then hide
+            mobileMenu.classList.remove('opacity-100', 'scale-y-100', 'pointer-events-auto');
+            mobileMenu.classList.add('opacity-0', 'scale-y-95', 'pointer-events-none');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300); // Wait for transition to finish
+        }
     });
 
     // Close mobile menu when clicking on a link
     const mobileMenuLinks = mobileMenu.querySelectorAll('a');
     mobileMenuLinks.forEach(link => {
         link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.remove('opacity-100', 'scale-y-100', 'pointer-events-auto');
+            mobileMenu.classList.add('opacity-0', 'scale-y-95', 'pointer-events-none');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
         });
     });
 }
@@ -676,6 +705,8 @@ function addGlitchEffect() {
     const glitchElements = document.querySelectorAll('.glitch-title');
 
     setInterval(() => {
+        if (document.hidden) return;
+
         const randomElement = glitchElements[Math.floor(Math.random() * glitchElements.length)];
         if (randomElement) {
             randomElement.style.animation = 'none';
@@ -883,6 +914,8 @@ function glitchRandomText() {
     const glitchables = document.querySelectorAll('.glitch');
 
     setInterval(() => {
+        if (document.hidden) return;
+
         if (Math.random() > 0.95) {
             const randomElement = glitchables[Math.floor(Math.random() * glitchables.length)];
             if (randomElement) {
